@@ -10,10 +10,10 @@ Inspired by and sourced from [eslint/sort-keys](<[https://github.com/eslint/esli
 <!-- prettier-ignore -->
 | Name | Description | Recommended | Fixable |
 | ---- | ----------- | ------------------ | -------- |
-| [`typescript-sort/interface`](./docs/interface.md) | require interface keys to be sorted | ✅ | :wrench: |
-| [`typescript-sort/sort-type`](./docs/sort-type.md) | require string type members to be sorted | ✅ | :wrench: |
-| [`typescript-sort/sort-enum`](./docs/sort-enum.md) | require string enum members to be sorted | ✅ | :wrench: |
-| [`typescript-sort/sort-arrow-func-object-props`](./docs/sort-arrow-func-object-props.md) | require string enum members to be sorted | ✅ | :wrench: |
+| [`typescript-sort/interface`](./docs/interface.md) | Require interface keys to be sorted. | ✅ | :wrench: |
+| [`typescript-sort/sort-type`](./docs/sort-type.md) | Require string type members to be sorted. | ✅ | :wrench: |
+| [`typescript-sort/sort-enum`](./docs/sort-enum.md) | Require string enum members to be sorted. | ✅ | :wrench: |
+| [`typescript-sort/sort-arrow-func-object-props`](./docs/sort-arrow-func-object-props.md) | Require objects inside arrow function parameters to be sorted. | ✅ | :wrench: |
 
 <!-- end rule list -->
 
