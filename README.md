@@ -7,11 +7,8 @@ Inspired by and sourced from [eslint/sort-keys](<[https://github.com/eslint/esli
 ## Supported Rules
 
 <!-- begin rule list -->
-
-**Key**: ✅ = recommended, :wrench: = fixable
-
 <!-- prettier-ignore -->
-| Name | Description | recommended | fixable |
+| Name | Description | Recommended | Fixable |
 | ---- | ----------- | ------------------ | -------- |
 | [`typescript-sort/interface`](./docs/interface.md) | require interface keys to be sorted | ✅ | :wrench: |
 | [`typescript-sort/sort-type`](./docs/sort-type.md) | require string type members to be sorted | ✅ | :wrench: |
