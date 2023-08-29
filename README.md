@@ -1,8 +1,9 @@
 # eslint-plugin-typescript-sort
 
-Sort interface, types, string enums and Arrow function object props.
+Sort interface, types, string enums and arrow function object props.
 
-Inspired by and sourced from [eslint/sort-keys](<[https://github.com/eslint/eslint/blob/master/docs/rules/sort-keys.md](https://github.com/eslint/eslint/blob/main/docs/src/rules/sort-keys.md)>) and [infectr/eslint-plugin-typescript-sort-keys](https://github.com/infctr/eslint-plugin-typescript-sort-keys/tree/master)
+Inspired by and sourced from [eslint/sort-keys](https://github.com/eslint/eslint/blob/main/docs/src/rules/sort-keys.md) 
+and [infectr/eslint-plugin-typescript-sort-keys](https://github.com/infctr/eslint-plugin-typescript-sort-keys/tree/master).
 
 ## Supported Rules
 
