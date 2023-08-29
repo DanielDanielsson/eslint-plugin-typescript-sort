@@ -27,13 +27,13 @@ You'll first need to install
 - [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser)
 
 ```sh
-yarn add -D eslint typescript @typescript-eslint/parser
+npm i --save-dev eslint typescript @typescript-eslint/parser
 ```
 
 Next, install `eslint-plugin-typescript-sort`:
 
 ```sh
-yarn add -D eslint-plugin-typescript-sort
+npm i --save-dev eslint-plugin-typescript-sort
 ```
 
 **Note:** If you installed ESLint globally then you must also install `eslint-plugin-typescript-sort` globally.
@@ -61,8 +61,10 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "typescript-sort/interface": "error",
-    "typescript-sort/string-enum": "error"
+    "typescript-sort/sort-interface": "error",
+    "typescript-sort/sort-type": "error",
+    "typescript-sort/sort-enum": "error"
+    "typescript-sort/sort-arrow-func-object-params": "error"
   }
 }
 ```
