@@ -14,9 +14,9 @@ Inspired by and sourced from [eslint/sort-keys](<[https://github.com/eslint/esli
 | Name | Description | ✅ | :wrench: |
 | ---- | ----------- | ------------------ | -------- |
 | [`typescript-sort/interface`](./docs/interface.md) | require interface keys to be sorted | ✅ | :wrench: |
-| [`typescript-sort/string-type`](./docs/sort-type.md) | require string type members to be sorted | ✅ | :wrench: |
-| [`typescript-sort/string-enum`](./docs/sort-enum.md) | require string enum members to be sorted | ✅ | :wrench: |
-| [`typescript-sort/string-enum`](./docs/sort-arrow-func-object-props.md) | require string enum members to be sorted | ✅ | :wrench: |
+| [`typescript-sort/sort-type`](./docs/sort-type.md) | require string type members to be sorted | ✅ | :wrench: |
+| [`typescript-sort/sort-enum`](./docs/sort-enum.md) | require string enum members to be sorted | ✅ | :wrench: |
+| [`typescript-sort/sort-arrow-func-object-props`](./docs/sort-arrow-func-object-props.md) | require string enum members to be sorted | ✅ | :wrench: |
 
 <!-- end rule list -->
 
