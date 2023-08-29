@@ -2,8 +2,6 @@
 
 Sort interfaces, types, string enums and arrow function object props.
 
-
-
 ## Supported Rules
 
 <!-- begin rule list -->
@@ -76,5 +74,5 @@ Or enable all rules with defaults
 }
 ```
 
-Inspired by and sourced from [eslint/sort-keys](https://github.com/eslint/eslint/blob/main/docs/src/rules/sort-keys.md) 
+Inspired by and sourced from [eslint/sort-keys](https://github.com/eslint/eslint/blob/main/docs/src/rules/sort-keys.md)
 and [infectr/eslint-plugin-typescript-sort-keys](https://github.com/infctr/eslint-plugin-typescript-sort-keys/tree/master).
