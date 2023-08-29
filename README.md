@@ -11,7 +11,7 @@ Inspired by and sourced from [eslint/sort-keys](<[https://github.com/eslint/esli
 **Key**: ✅ = recommended, :wrench: = fixable
 
 <!-- prettier-ignore -->
-| Name | Description | ✅ | :wrench: |
+| Name | Description | recommended | fixable |
 | ---- | ----------- | ------------------ | -------- |
 | [`typescript-sort/interface`](./docs/interface.md) | require interface keys to be sorted | ✅ | :wrench: |
 | [`typescript-sort/sort-type`](./docs/sort-type.md) | require string type members to be sorted | ✅ | :wrench: |
