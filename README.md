@@ -8,15 +8,15 @@ Inspired by and sourced from [eslint/sort-keys](<[https://github.com/eslint/esli
 
 <!-- begin rule list -->
 
-**Key**: :green_check_mark: = recommended, :wrench: = fixable
+**Key**: ✅ = recommended, :wrench: = fixable
 
 <!-- prettier-ignore -->
-| Name | Description | :green_check_mark: | :wrench: |
+| Name | Description | ✅ | :wrench: |
 | ---- | ----------- | ------------------ | -------- |
-| [`typescript-sort-keys/interface`](./docs/interface.md) | require interface keys to be sorted | :green_check_mark: | :wrench: |
-| [`typescript-sort-keys/string-type`](./docs/sort-type.md) | require string type members to be sorted | :green_check_mark: | :wrench: |
-| [`typescript-sort-keys/string-enum`](./docs/sort-enum.md) | require string enum members to be sorted | :green_check_mark: | :wrench: |
-| [`typescript-sort-keys/string-enum`](./docs/sort-arrow-func-object-props.md) | require string enum members to be sorted | :green_check_mark: | :wrench: |
+| [`typescript-sort-keys/interface`](./docs/interface.md) | require interface keys to be sorted | ✅ | :wrench: |
+| [`typescript-sort-keys/string-type`](./docs/sort-type.md) | require string type members to be sorted | ✅ | :wrench: |
+| [`typescript-sort-keys/string-enum`](./docs/sort-enum.md) | require string enum members to be sorted | ✅ | :wrench: |
+| [`typescript-sort-keys/string-enum`](./docs/sort-arrow-func-object-props.md) | require string enum members to be sorted | ✅ | :wrench: |
 
 <!-- end rule list -->
 
