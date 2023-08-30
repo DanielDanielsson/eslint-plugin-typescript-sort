@@ -21,6 +21,12 @@ ruleTester.run(
         c = 'default',
         d = 'default',
       }: MyComponentProps) => null;`,
+      noFormat`export const MyComponent = ({
+        a = 'default',
+        b = 'default',
+        c = 'default',
+        d = 'default',
+      }) => null;`,
     ],
     invalid: [
       {
@@ -37,6 +43,21 @@ ruleTester.run(
           c = 'default',
           d = 'default',
         }: MyComponentProps) => null;`,
+      },
+      {
+        code: noFormat`export const MyComponent = ({
+          b = 'default',
+          a = 'default',
+          c = 'default',
+          d = 'default',
+        }) => null;`,
+        errors: [{ messageId: "invalidOrder" }],
+        output: noFormat`export const MyComponent = ({
+          a = 'default',
+          b = 'default',
+          c = 'default',
+          d = 'default',
+        }) => null;`,
       },
     ],
   }
