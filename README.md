@@ -37,9 +37,11 @@ npm i --save-dev eslint-plugin-typescript-sort
 
 ## Usage
 
+Everything is configured in your `.eslintrc` configuration file
+
 ### Option 1
 
-Specify the parser for typescript files in your `.eslintrc` configuration file:
+Specify the parser for typescript files:
 
 ```json
 {
@@ -47,7 +49,7 @@ Specify the parser for typescript files in your `.eslintrc` configuration file:
 }
 ```
 
-Add `typescript-sort` to the plugins section. You can omit the `eslint-plugin-` in your `.eslintrc` configuration file:
+Add `typescript-sort` to the plugins section. You can omit the `eslint-plugin-`:
 
 ```json
 {
@@ -55,7 +57,7 @@ Add `typescript-sort` to the plugins section. You can omit the `eslint-plugin-` 
 }
 ```
 
-Then configure the rules you want to use under the rules section in your `.eslintrc` configuration file.
+Then configure the rules you want to use under the rules section:
 
 ```json
 {
@@ -69,7 +71,7 @@ Then configure the rules you want to use under the rules section in your `.eslin
 ```
 ### Option 2
 
-Enable all rules with defaults in `.eslintrc` 
+Enable all rules with recommended config:
 
 ```json
 {
