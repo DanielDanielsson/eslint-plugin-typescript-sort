@@ -1,6 +1,6 @@
-# (Work in progress...) eslint-plugin-typescript-sort
+# eslint-plugin-typescript-sort
 
-Sort interfaces, types, string enums and arrow function object props.
+Sort interfaces, types, string enums and arrow function object parameters.
 
 ## Supported Rules
 
