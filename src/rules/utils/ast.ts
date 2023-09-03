@@ -47,34 +47,6 @@ const getProperty = (node: TSESTree.Node) => {
   }
 };
 
-/**
- * Gets the property name of the given `Property` node.
- *
- * - If the property's key is an `Identifier` node, this returns the key's name
- *   whether it's a computed property or not.
- * - If the property has a static name, this returns the static name.
- * - Otherwise, this returns undefined.
- *
- *     a.b           // => "b"
- *     a["b"]        // => "b"
- *     a['b']        // => "b"
- *     a[`b`]        // => "b"
- *     a[100]        // => "100"
- *     a[b]          // => undefined
- *     a["a" + "b"]  // => undefined
- *     a[tag`b`]     // => undefined
- *     a[`${b}`]     // => undefined
- *
- *     let a = {b: 1}            // => "b"
- *     let a = {["b"]: 1}        // => "b"
- *     let a = {['b']: 1}        // => "b"
- *     let a = {[`b`]: 1}        // => "b"
- *     let a = {[100]: 1}        // => "100"
- *     let a = {[b]: 1}          // => undefined
- *     let a = {["a" + "b"]: 1}  // => undefined
- *     let a = {[tag`b`]: 1}     // => undefined
- *     let a = {[`${b}`]: 1}     // => undefined
- */
 export const getPropertyName = (
   node:
     | TSESTree.TypeElement
