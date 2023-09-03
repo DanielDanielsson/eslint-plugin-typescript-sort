@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-typescript-sort",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "./lib/index.cjs.js",
   "exports": {
     ".": {
@@ -10,6 +10,12 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "/lib",
+    "package.json",
+    "LICENSE.md",
+    "README.md"
+  ],
   "scripts": {
     "lint": "eslint --ext .ts,.tsx .",
     "lint:fix": "eslint --ext .ts,.tsx . --fix",
