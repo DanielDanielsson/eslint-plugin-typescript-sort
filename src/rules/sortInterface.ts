@@ -1,16 +1,16 @@
 /* eslint-disable import/no-default-export */
-import { JSONSchema4 } from '@typescript-eslint/utils/json-schema';
+import { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
-import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/utils';
-import { createSortReporter } from './utils/plugin';
-import { createRule, RuleMetaData } from './utils/rule';
+import { TSESTree, AST_NODE_TYPES } from "@typescript-eslint/utils";
+import { createSortReporter } from "./utils/plugin.ts";
+import { createRule, RuleMetaData } from "./utils/rule.ts";
 import {
   sortingOrderOptionSchema,
   SortingOrder,
   ErrorMessage,
   SortingOrderOption,
   SortingParamsOptions,
-} from './common/options';
+} from "./common/options.ts";
 
 const getObjectBody = (node: TSESTree.TSInterfaceDeclaration) =>
   node.type === AST_NODE_TYPES.TSInterfaceDeclaration && node.body.body;
@@ -18,11 +18,11 @@ const getObjectBody = (node: TSESTree.TSInterfaceDeclaration) =>
 /**
  * The name of this rule.
  */
-export const name = 'interface' as const;
+export const name = "interface" as const;
 
-type SortingParams = SortingParamsOptions['caseSensitive'] &
-  SortingParamsOptions['natural'] &
-  SortingParamsOptions['requiredFirst'];
+type SortingParams = SortingParamsOptions["caseSensitive"] &
+  SortingParamsOptions["natural"] &
+  SortingParamsOptions["requiredFirst"];
 
 /**
  * The options this rule can take.
@@ -32,16 +32,16 @@ export type Options =
   | [SortingOrderOption, Partial<SortingParams>];
 
 const sortingParamsOptionSchema: JSONSchema4 = {
-  type: 'object',
+  type: "object",
   properties: {
     caseSensitive: {
-      type: 'boolean',
+      type: "boolean",
     },
     natural: {
-      type: 'boolean',
+      type: "boolean",
     },
     requiredFirst: {
-      type: 'boolean',
+      type: "boolean",
     },
   },
   additionalProperties: false,
@@ -74,13 +74,13 @@ const errorMessages = {
  * The meta data for this rule.
  */
 const meta: RuleMetaData<keyof typeof errorMessages> = {
-  type: 'suggestion',
+  type: "suggestion",
   docs: {
-    description: 'Require interface keys to be sorted alphabetically.',
-    recommended: 'recommended',
+    description: "Require interface keys to be sorted alphabetically.",
+    recommended: "recommended",
   },
   messages: errorMessages,
-  fixable: 'code',
+  fixable: "code",
   schema,
 };
 
@@ -95,7 +95,7 @@ export const sortInterface = createRule<keyof typeof errorMessages, Options>({
   create(context) {
     const compareNodeListAndReport = createSortReporter(context, ({ loc }) => ({
       loc,
-      messageId: 'invalidOrder',
+      messageId: "invalidOrder",
     }));
 
     return {

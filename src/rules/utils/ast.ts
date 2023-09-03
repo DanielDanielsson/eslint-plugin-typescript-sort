@@ -1,12 +1,12 @@
-import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/utils';
+import { TSESTree, AST_NODE_TYPES } from "@typescript-eslint/utils";
 
-import { indexSignature } from './common';
+import { indexSignature } from "./common.ts";
 
 export const getObjectBody = (
   node:
     | TSESTree.TSEnumDeclaration
     | TSESTree.TSInterfaceDeclaration
-    | TSESTree.TSTypeLiteral,
+    | TSESTree.TSTypeLiteral
 ) => {
   switch (node.type) {
     case AST_NODE_TYPES.TSInterfaceDeclaration:
@@ -28,7 +28,7 @@ const getProperty = (node: TSESTree.Node) => {
         ...identifier,
         // Override name for error message readability and weight calculation
         name: indexSignature.create(
-          (identifier as TSESTree.Parameter & { name: string }).name,
+          (identifier as TSESTree.Parameter & { name: string }).name
         ),
       };
     }
@@ -80,7 +80,7 @@ export const getPropertyName = (
     | TSESTree.TypeElement
     | TSESTree.TSEnumMember
     | TSESTree.Parameter
-    | TSESTree.Property,
+    | TSESTree.Property
 ) => {
   const property = getProperty(node);
 
@@ -105,7 +105,7 @@ export const getPropertyIsOptional = (
     | TSESTree.TypeElement
     | TSESTree.TSEnumMember
     | TSESTree.Parameter
-    | TSESTree.Property,
+    | TSESTree.Property
 ) => {
   switch (node.type) {
     case AST_NODE_TYPES.TSMethodSignature:

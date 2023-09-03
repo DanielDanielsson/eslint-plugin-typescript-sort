@@ -1,6 +1,6 @@
-import naturalCompare from 'natural-compare-lite';
+import naturalCompare from "natural-compare-lite";
 
-import { indexSignature } from './common';
+import { indexSignature } from "./common.ts";
 
 const charCompare = (a: string, b: string) => {
   if (a < b) {
@@ -27,7 +27,7 @@ const getWeight = (value: string) => {
 const weightedCompare = (
   a: string,
   b: string,
-  compareFn: (a: string, b: string) => number,
+  compareFn: (a: string, b: string) => number
 ) => compareFn(a, b) - getWeight(a) + getWeight(b);
 
 const ascending = (a: string, b: string) => weightedCompare(a, b, charCompare);
@@ -42,7 +42,7 @@ const ascendingInsensitiveNatural = (a: string, b: string) =>
   weightedCompare(
     a.toLowerCase(),
     b.toLowerCase(),
-    naturalCompare as (a: string, b: string) => number,
+    naturalCompare as (a: string, b: string) => number
   );
 
 /**

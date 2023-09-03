@@ -1,25 +1,25 @@
-import { JSONSchema4 } from '@typescript-eslint/utils/json-schema';
-import { TSESTree, AST_NODE_TYPES } from '@typescript-eslint/utils';
-import { createSortReporter } from './utils/plugin';
-import { createRule, RuleMetaData } from './utils/rule';
+import { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
+import { TSESTree, AST_NODE_TYPES } from "@typescript-eslint/utils";
+import { createSortReporter } from "./utils/plugin.ts";
+import { createRule, RuleMetaData } from "./utils/rule.ts";
 import {
   sortingOrderOptionSchema,
   SortingOrder,
   ErrorMessage,
   SortingOrderOption,
   SortingParamsOptions,
-} from './common/options';
+} from "./common/options.ts";
 
 const getObjectBody = (node: TSESTree.TSTypeLiteral) =>
   node.type === AST_NODE_TYPES.TSTypeLiteral && node.members;
 /**
  * The name of this rule.
  */
-export const name = 'type' as const;
+export const name = "type" as const;
 
-type SortingParams = SortingParamsOptions['caseSensitive'] &
-  SortingParamsOptions['natural'] &
-  SortingParamsOptions['requiredFirst'];
+type SortingParams = SortingParamsOptions["caseSensitive"] &
+  SortingParamsOptions["natural"] &
+  SortingParamsOptions["requiredFirst"];
 
 /**
  * The options this rule can take.
@@ -29,16 +29,16 @@ export type Options =
   | [SortingOrderOption, Partial<SortingParams>];
 
 const sortingParamsOptionSchema: JSONSchema4 = {
-  type: 'object',
+  type: "object",
   properties: {
     caseSensitive: {
-      type: 'boolean',
+      type: "boolean",
     },
     natural: {
-      type: 'boolean',
+      type: "boolean",
     },
     requiredFirst: {
-      type: 'boolean',
+      type: "boolean",
     },
   },
   additionalProperties: false,
@@ -63,23 +63,23 @@ const defaultOptions: Options = [
 /**
  * The meta data for this rule.
  */
-const meta: RuleMetaData<'invalidOrder'> = {
-  type: 'suggestion',
+const meta: RuleMetaData<"invalidOrder"> = {
+  type: "suggestion",
   docs: {
-    description: 'Require type keys to be sorted alphabetically.',
-    recommended: 'recommended',
+    description: "Require type keys to be sorted alphabetically.",
+    recommended: "recommended",
   },
   messages: {
     invalidOrder: ErrorMessage.TypeInvalidOrder,
   },
-  fixable: 'code',
+  fixable: "code",
   schema,
 };
 
 /**
  * Create the rule.
  */
-export const sortType = createRule<'invalidOrder', Options>({
+export const sortType = createRule<"invalidOrder", Options>({
   name,
   meta,
   defaultOptions,
@@ -87,7 +87,7 @@ export const sortType = createRule<'invalidOrder', Options>({
   create(context) {
     const compareNodeListAndReport = createSortReporter(context, ({ loc }) => ({
       loc,
-      messageId: 'invalidOrder',
+      messageId: "invalidOrder",
     }));
 
     return {

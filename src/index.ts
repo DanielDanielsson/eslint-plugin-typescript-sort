@@ -1,7 +1,7 @@
-import { sortInterface } from "./rules/sortInterface";
-import { sortType } from "./rules/sortType";
-import { sortEnum } from "./rules/sortEnum";
-import { sortArrowFuncObjectParams } from "./rules/sortArrowFuncObjectParams";
+import { sortInterface } from "./rules/sortInterface.ts";
+import { sortType } from "./rules/sortType.ts";
+import { sortEnum } from "./rules/sortEnum.ts";
+import { sortArrowFuncObjectParams } from "./rules/sortArrowFuncObjectParams.ts";
 
 const rules = {
   "sort-interface": sortInterface,
@@ -10,4 +10,8 @@ const rules = {
   "sort-arrowfunc-object-params": sortArrowFuncObjectParams,
 };
 
-export default rules;
+const config = {
+  rules,
+};
+
+export default config;
