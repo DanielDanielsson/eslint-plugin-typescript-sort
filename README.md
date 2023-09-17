@@ -39,8 +39,6 @@ npm i --save-dev eslint-plugin-typescript-sort
 
 Everything is configured in your `.eslintrc` configuration file
 
-### Option 1
-
 Specify the parser for typescript files:
 
 ```json
@@ -48,6 +46,8 @@ Specify the parser for typescript files:
   "parser": "@typescript-eslint/parser"
 }
 ```
+
+### Option 1
 
 Add `typescript-sort` to the plugins section. You can omit the `eslint-plugin-`:
 
