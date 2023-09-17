@@ -72,7 +72,7 @@ const meta: RuleMetaData<"invalidOrder"> = {
     recommended: "recommended",
   },
   messages: {
-    invalidOrder: ErrorMessage.DefaultPropsInvalidOrder,
+    invalidOrder: ErrorMessage.ArrowFuncObjectPropsOrder,
   },
   fixable: "code",
   schema,
@@ -97,24 +97,29 @@ export const sortArrowFuncObjectParams = createRule<"invalidOrder", Options>({
         const body = getObjectBody(node);
 
         // Sort all objects in the body of the ArrowFunctionExpression
-        body.forEach((subNode) => {
-          if (subNode.type === AST_NODE_TYPES.ObjectPattern) {
-            const propertyArray: TSESTree.Property[] = [];
+        body &&
+          body.forEach((subNode) => {
+            if (subNode.type === AST_NODE_TYPES.ObjectPattern) {
+              const propertyArray: Array<
+                TSESTree.Property | TSESTree.RestElement
+              > = [];
 
-            // Make sure all properties are of type Property and have a key of type Identifier
-            subNode.properties.forEach((subProperty) => {
-              if (
-                subProperty.type === "Property" &&
-                subProperty.key.type === "Identifier"
-              ) {
-                propertyArray.push(subProperty);
-              }
-            });
+              // Make sure all properties are of type Property and have a key of type Identifier
+              subNode.properties.forEach((subProperty) => {
+                if (
+                  subProperty.type === "Property" &&
+                  subProperty.key.type === "Identifier"
+                ) {
+                  propertyArray.push(subProperty);
+                } else if (subProperty.type === "RestElement") {
+                  propertyArray.push(subProperty);
+                }
+              });
 
-            return compareNodeListAndReport(propertyArray);
-          }
-          return null;
-        });
+              return compareNodeListAndReport(propertyArray);
+            }
+            return null;
+          });
 
         return null;
       },

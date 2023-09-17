@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-typescript-sort",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "main": "./lib/index.cjs.js",
   "exports": {
     ".": {
@@ -28,11 +28,6 @@
     "natural-compare-lite": "^1.4.0",
     "ts-node": "^10.9.1"
   },
-  "author": {
-    "name": "Daniel Danielsson",
-    "email": "danielssondaniel94@gmail.com",
-    "url": "https://danieldanielsson.dev"
-  },
   "publishConfig": {
     "access": "public"
   },
@@ -53,5 +48,22 @@
     "rollup": "^3.28.1",
     "tsconfig": "^7.0.0",
     "typescript": "^5.2.2"
-  }
+  },
+  "author": {
+    "name": "Daniel Danielsson",
+    "email": "danielssondaniel94@gmail.com",
+    "url": "https://danieldanielsson.dev"
+  },
+  "homepage": "https://github.com/DanielDanielsson/eslint-plugin-typescript-sort#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielDanielsson/eslint-plugin-typescript-sort"
+  },
+  "keywords": [
+    "eslint-plugin",
+    "eslint",
+    "plugin",
+    "typescript",
+    "sort"
+  ]
 }

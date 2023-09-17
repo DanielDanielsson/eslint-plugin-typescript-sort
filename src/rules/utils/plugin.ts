@@ -15,7 +15,11 @@ import { compareFn } from "./compare.ts";
 
 type RuleOptions = InterfaceRuleOptions & StringEnumRuleOptions;
 
-type TSType = TSESTree.TypeElement | TSESTree.TSEnumMember | TSESTree.Property;
+type TSType =
+  | TSESTree.TypeElement
+  | TSESTree.TSEnumMember
+  | TSESTree.Property
+  | TSESTree.RestElement;
 
 const createNodeSwapper = (context: UtilRuleContext<string, RuleOptions>) => {
   const sourceCode = context.getSourceCode() as SourceCode & {

@@ -1,12 +1,12 @@
-import { JSONSchema4 } from '@typescript-eslint/utils/json-schema';
+import { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
 export enum SortingOrder {
-  Ascending = 'asc',
-  Descending = 'desc',
+  Ascending = "asc",
+  Descending = "desc",
 }
 
 export const sortingOrderOptionSchema: JSONSchema4 = {
-  type: 'string',
+  type: "string",
   enum: [SortingOrder.Ascending, SortingOrder.Descending],
 };
 
@@ -31,7 +31,7 @@ export interface SortingParamsOptions {
 }
 
 export enum ErrorMessage {
-  DefaultPropsInvalidOrder = `Expected default props to component to be in {{ requiredFirst }}{{ natural }}{{ insensitive }}{{ order }}ending order. '{{ thisName }}' should be before '{{ prevName }}'.`,
+  ArrowFuncObjectPropsOrder = `Expected arrow function object properties to be in {{ requiredFirst }}{{ natural }}{{ insensitive }}{{ order }}ending order. '{{ thisName }}' should be before '{{ prevName }}'.`,
   InterfaceInvalidOrder = `Expected interface keys to be in {{ requiredFirst }}{{ natural }}{{ insensitive }}{{ order }}ending order. '{{ thisName }}' should be before '{{ prevName }}'.`,
   StringEnumInvalidOrder = `Expected string enum members to be in {{ natural }}{{ insensitive }}{{ order }}ending order. '{{ thisName }}' should be before '{{ prevName }}'.`,
   TypeInvalidOrder = `Expected type keys to be in {{ requiredFirst }}{{ natural }}{{ insensitive }}{{ order }}ending order. '{{ thisName }}' should be before '{{ prevName }}'.`,

@@ -101,7 +101,7 @@ export const sortInterface = createRule<keyof typeof errorMessages, Options>({
     return {
       TSInterfaceDeclaration(node) {
         const body = getObjectBody(node);
-        return compareNodeListAndReport(body);
+        return body && compareNodeListAndReport(body);
       },
     };
   },

@@ -94,7 +94,7 @@ export const sortType = createRule<"invalidOrder", Options>({
       TSTypeLiteral(node) {
         const body = getObjectBody(node);
 
-        return compareNodeListAndReport(body);
+        return body && compareNodeListAndReport(body);
       },
     };
   },
