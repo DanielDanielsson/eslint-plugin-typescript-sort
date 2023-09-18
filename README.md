@@ -8,7 +8,7 @@ Sort interfaces, types, string enums and arrow function object parameters.
 <!-- prettier-ignore -->
 | Name | Description | Recommended | Fixable |
 | ---- | ----------- | ------------------ | -------- |
-| [`typescript-sort/sort-interface`](./docs/interface.md) | Require interface keys to be sorted. | ✅ | :wrench: |
+| [`typescript-sort/sort-interface`](./docs/sort-interface.md) | Require interface keys to be sorted. | ✅ | :wrench: |
 | [`typescript-sort/sort-type`](./docs/sort-type.md) | Require string type members to be sorted. | ✅ | :wrench: |
 | [`typescript-sort/sort-enum`](./docs/sort-enum.md) | Require string enum members to be sorted. | ✅ | :wrench: |
 | [`typescript-sort/sort-arrowfunc-object-params`](./docs/sort-arrowfunc-object-params.md) | Require objects inside arrow function parameters to be sorted. | ✅ | :wrench: |
@@ -69,6 +69,7 @@ Then configure the rules you want to use under the rules section:
   }
 }
 ```
+
 ### Option 2
 
 Enable all rules with recommended config:
