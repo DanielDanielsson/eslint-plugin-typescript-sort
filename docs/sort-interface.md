@@ -1,4 +1,4 @@
-# Typescript-sort/sort-interface
+# Typescript-sort/interface
 
 This rule enforces the sorting of property names alphabetically when declaring multiple properties on an interface. It helps developers maintain a consistent coding style and improves code readability.
 
@@ -9,7 +9,7 @@ This rule checks all property definitions of an interface declaration and verifi
 ❌ Example of **incorrect** code for this rule:
 
 ```ts
-/* eslint typescript-sort/sort-interface: "error" */
+/* eslint typescript-sort/interface: "error" */
 
 interface MyInterface {
   a: string;
@@ -21,7 +21,7 @@ interface MyInterface {
 ✅ Examples of **correct** code for this rule:
 
 ```ts
-/* eslint typescript-sort/sort-interface: "error" */
+/* eslint typescript-sort/interface: "error" */
 
 interface MyInterface {
   a: string;
@@ -34,7 +34,7 @@ interface MyInterface {
 
 ```json
 {
-  "typescript-sort/sort-interface": [
+  "typescript-sort/interface": [
     "error",
     "asc",
     { "caseSensitive": true, "natural": false, "requiredFirst": false }
@@ -63,7 +63,7 @@ interface MyInterface {
 ❌ Examples of **incorrect** code for the `"desc"` option:
 
 ```ts
-/* eslint typescript-sort/sort-interface: ["error", "desc"] */
+/* eslint typescript-sort/interface: ["error", "desc"] */
 
 interface MyInterface {
   b: string;
@@ -101,7 +101,7 @@ interface MyInterface {
 ✅ Examples of **correct** code for the `"desc"` option:
 
 ```ts
-/* eslint typescript-sort/sort-interface: ["error", "desc"] */
+/* eslint typescript-sort/interface: ["error", "desc"] */
 
 interface MyInterface {
   c: string;
@@ -141,7 +141,7 @@ interface MyInterface {
 ❌ Examples of **incorrect** code for the `{ caseSensitive: false }` option:
 
 ```ts
-/* eslint typescript-sort/sort-interface: ["error", "asc", { caseSensitive: false }] */
+/* eslint typescript-sort/interface: ["error", "asc", { caseSensitive: false }] */
 
 interface MyInterface {
   a: string;
@@ -161,7 +161,7 @@ interface MyInterface {
 ✅ Examples of **correct** code for the `{ caseSensitive: false }` option:
 
 ```ts
-/* eslint typescript-sort/sort-interface: ["error", "asc", { caseSensitive: false }] */
+/* eslint typescript-sort/interface: ["error", "asc", { caseSensitive: false }] */
 
 interface MyInterface {
   a: string;
@@ -182,7 +182,7 @@ interface MyInterface {
 ❌ Examples of **incorrect** code for the `{natural: true}` option:
 
 ```ts
-/* eslint typescript-sort/sort-interface: ["error", "asc", { natural: true }] */
+/* eslint typescript-sort/interface: ["error", "asc", { natural: true }] */
 
 interface MyInterface {
   1: number;
@@ -194,7 +194,7 @@ interface MyInterface {
 ✅ Examples of **correct** code for the `{natural: true}` option:
 
 ```ts
-/* eslint typescript-sort/sort-interface: ["error", "asc", { natural: true }] */
+/* eslint typescript-sort/interface: ["error", "asc", { natural: true }] */
 
 interface MyInterface {
   1: number;
@@ -208,7 +208,7 @@ interface MyInterface {
 ❌ Examples of **incorrect** code for the `{ requiredFirst: true }` option:
 
 ```ts
-/* eslint typescript-sort/sort-interface: ["error", "asc", { requiredFirst: true }] */
+/* eslint typescript-sort/interface: ["error", "asc", { requiredFirst: true }] */
 
 interface MyInterface {
   d: string;
@@ -221,7 +221,7 @@ interface MyInterface {
 ✅ Examples of **correct** code for the `{ requiredFirst: true }` option:
 
 ```ts
-/* eslint typescript-sort/sort-interface: ["error", "asc", { requiredFirst: true }] */
+/* eslint typescript-sort/interface: ["error", "asc", { requiredFirst: true }] */
 
 interface MyInterface {
   a: string;

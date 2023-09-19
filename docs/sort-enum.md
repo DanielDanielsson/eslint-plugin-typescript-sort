@@ -1,171 +1,232 @@
-# require string enum members to be sorted (string-enum)
+# Typescript-sort/enum
 
-When declaring multiple members on an string enum, some developers prefer to sort enum member names alphabetically to be able to find necessary members easier at the later time. Others feel that it adds complexity and becomes burden to maintain.
+This rule enforces the sorting of property names alphabetically when declaring multiple properties on an enum. It helps developers maintain a consistent coding style and improves code readability.
 
 ## Rule Details
 
-This rule checks all members of a string enum declaration and verifies that all keys are sorted alphabetically.
+This rule checks all property definitions of an enum declaration and verifies that all keys are sorted alphabetically.
 
 ❌ Example of **incorrect** code for this rule:
 
 ```ts
-/* eslint typescript-sort-keys/string-enum: "error" */
+/* eslint typescript-sort/enum: "error" */
 
-enum U {
-  a = "T",
-  c = "T",
-  b = "T",
+enum MyEnum {
+  a = string;
+  c = string;
+  b = string;
 }
 ```
 
-✅ Example of **correct** code for this rule:
+✅ Examples of **correct** code for this rule:
 
 ```ts
-/* eslint typescript-sort-keys/string-enum: "error" */
+/* eslint typescript-sort/enum: "error" */
 
-enum U {
-  a = "T",
-  b = "T",
-  c = "T",
+enum MyEnum {
+  a = string;
+  b = string;
+  c = string;
 }
 ```
 
-## Options
+## 🔧 Options
 
 ```json
 {
-  "typescript-sort-keys/string-enum": [
+  "typescript-sort/enum": [
     "error",
     "asc",
-    { "caseSensitive": true }
+    { "caseSensitive": true, "natural": false, "requiredFirst": false }
   ]
 }
 ```
 
-The 1st option is `"asc"` or `"desc"`.
+**Options for this rule:**
 
-- `"asc"` (default) - enforce enum members to be in ascending order.
-- `"desc"` - enforce enum members to be in descending order.
+- **Ordering**:
 
-The 2nd option is an object which has 2 properties.
+  - `"asc"` (default): Enforces properties to be in ascending order.
+  - `"desc"`: Enforces properties to be in descending order.
 
-- `caseSensitive` - if `true`, enforce enum members to be in case-sensitive order. Default is `true`.
-- `natural` - if `true`, enforce enum members to be in natural order. Default is `false`. Natural Order compares strings containing combination of letters and numbers in the way a human being would sort. It basically sorts numerically, instead of sorting alphabetically. So the number 10 comes after the number 3 in Natural Sorting.
+- **Additional Configuration**:
+  - An object with 3 properties:
+    - `caseSensitive` (default: `true`): If `true`, enforces case-sensitive property order.
+    - `natural` (default: `false`): If `true`, enforces natural order, sorting strings containing a combination of letters and numbers as a human would, i.e., numerically.
+      - E.g. 1 2 10 3
+      - With `natural` set to `true`, the ordering would be: 1 2 3 10
+      - With `natural` set to `false`, the ordering would be: 1 2 10 3
+    - `requiredFirst` (default: `false`): If `true`, enforces optional properties to come after required ones.
 
 ### desc
 
-Examples of **incorrect** code for the `"desc"` option:
+❌ Examples of **incorrect** code for the `"desc"` option:
 
 ```ts
-/* eslint typescript-sort-keys/string-enum: ["error", "desc"] */
+/* eslint typescript-sort/enum: ["error", "desc"] */
 
-enum U {
-  b = "T",
-  c = "T",
-  a = "T",
+enum MyEnum {
+  b = string;
+  c = string;
+  a = string;
 }
-enum U {
-  b = "T",
-  c = "T",
-  a = "T",
+enum MyEnum {
+  b = string;
+  c = string;
+  a = string;
 }
 
 // Case-sensitive by default.
-enum U {
-  C = "T",
-  b = "T",
-  a = "T",
+enum MyEnum {
+  C = string;
+  b = string;
+  a = string;
+}
+
+// Non-required first order by default.
+enum MyEnum {
+  a = string;
+  b? = string;
+  c = string;
+}
+
+// Non-natural order by default.
+enum MyEnum {
+  10 = number;
+  2 = number;
+  1 = number;
 }
 ```
 
-Examples of **correct** code for the `"desc"` option:
+✅ Examples of **correct** code for the `"desc"` option:
 
 ```ts
-/* eslint typescript-sort-keys/string-enum: ["error", "desc"] */
+/* eslint typescript-sort/enum: ["error", "desc"] */
 
-enum U {
-  c = "T",
-  b = "T",
-  a = "T",
+enum MyEnum {
+  c = string;
+  b = string;
+  a = string;
 }
-enum U {
-  c = "T",
-  b = "T",
-  a = "T",
+enum MyEnum {
+  c = string;
+  b = string;
+  a = string;
 }
 
 // Case-sensitive by default.
-enum U {
-  b = "T",
-  a = "T",
-  C = "T",
+enum MyEnum {
+  b = string;
+  a = string;
+  C = string;
+}
+
+// Non-required first order by default.
+enum MyEnum {
+  c = string;
+  b? = string;
+  a = string;
+}
+
+// Non-natural order by default.
+enum MyEnum {
+  2 = number;
+  10 = number;
+  1 = number;
 }
 ```
 
 ### insensitive
 
-Examples of **incorrect** code for the `{ caseSensitive: false }` option:
+❌ Examples of **incorrect** code for the `{ caseSensitive: false }` option:
 
 ```ts
-/* eslint typescript-sort-keys/string-enum: ["error", "asc", { caseSensitive: false }] */
+/* eslint typescript-sort/enum: ["error", "asc", { caseSensitive: false }] */
 
-enum U {
-  a = "T",
-  c = "T",
-  C = "T",
-  b = "T",
+enum MyEnum {
+  a = string;
+  c = string;
+  C = string;
+  b = string;
 }
-enum U {
-  a = "T",
-  C = "T",
-  c = "T",
-  b = "T",
+
+enum MyEnum {
+  a = string;
+  C = string;
+  c = string;
+  b = string;
 }
 ```
 
-Examples of **correct** code for the `{ caseSensitive: false }` option:
+✅ Examples of **correct** code for the `{ caseSensitive: false }` option:
 
 ```ts
-/* eslint typescript-sort-keys/string-enum: ["error", "asc", { caseSensitive: false }] */
+/* eslint typescript-sort/enum: ["error", "asc", { caseSensitive: false }] */
 
-enum U {
-  a = "T",
-  b = "T",
-  c = "T",
-  C = "T",
+enum MyEnum {
+  a = string;
+  b = string;
+  c = string;
+  C = string;
 }
-enum U {
-  a = "T",
-  b = "T",
-  C = "T",
-  c = "T",
+enum MyEnum {
+  a = string;
+  b = string;
+  C = string;
+  c = string;
 }
 ```
 
 ### natural
 
-Examples of **incorrect** code for the `{natural: true}` option:
+❌ Examples of **incorrect** code for the `{natural: true}` option:
 
 ```ts
-/* eslint typescript-sort-keys/string-enum: ["error", "asc", { natural: true }] */
+/* eslint typescript-sort/enum: ["error", "asc", { natural: true }] */
 
-enum U {
-  a = "T",
-  _ = "T",
-  A = "T",
-  $ = "T",
+enum MyEnum {
+  1 = number;
+  10 = number;
+  2 = number;
 }
 ```
 
-Examples of **correct** code for the `{natural: true}` option:
+✅ Examples of **correct** code for the `{natural: true}` option:
 
 ```ts
-/* eslint typescript-sort-keys/string-enum: ["error", "asc", { natural: true }] */
+/* eslint typescript-sort/enum: ["error", "asc", { natural: true }] */
 
-enum U {
-  a = "T",
-  A = "T",
-  _ = "T",
-  $ = "T",
+enum MyEnum {
+  1 = number;
+  2 = number;
+  10 = number;
+}
+```
+
+### required
+
+❌ Examples of **incorrect** code for the `{ requiredFirst: true }` option:
+
+```ts
+/* eslint typescript-sort/enum: ["error", "asc", { requiredFirst: true }] */
+
+enum MyEnum {
+  d = string;
+  c? = string;
+  b? = string;
+  a = string;
+}
+```
+
+✅ Examples of **correct** code for the `{ requiredFirst: true }` option:
+
+```ts
+/* eslint typescript-sort/enum: ["error", "asc", { requiredFirst: true }] */
+
+enum MyEnum {
+  a = string;
+  d = string;
+  b? = string;
+  c? = string;
 }
 ```
