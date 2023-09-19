@@ -1,40 +1,40 @@
-# require interface keys to be sorted
+# Typescript-sort/sort-interface
 
-When declaring multiple properties on an interface, some developers prefer to sort property names alphabetically to be able to find necessary property easier at the later time. Others feel that it adds complexity and becomes burden to maintain.
+This rule enforces the sorting of property names alphabetically when declaring multiple properties on an interface. It helps developers maintain a consistent coding style and improves code readability.
 
 ## Rule Details
 
 This rule checks all property definitions of an interface declaration and verifies that all keys are sorted alphabetically.
 
-Example of **incorrect** code for this rule:
+❌ Example of **incorrect** code for this rule:
 
 ```ts
-/* eslint typescript-sort-keys/interface: "error" */
+/* eslint typescript-sort/sort-interface: "error" */
 
-interface U {
-  a: T;
-  c: T;
-  b: T;
+interface MyInterface {
+  a: string;
+  c: string;
+  b: string;
 }
 ```
 
-Examples of **correct** code for this rule:
+✅ Examples of **correct** code for this rule:
 
 ```ts
-/* eslint typescript-sort-keys/interface: "error" */
+/* eslint typescript-sort/sort-interface: "error" */
 
-interface U {
-  a: T;
-  b: T;
-  c: T;
+interface MyInterface {
+  a: string;
+  b: string;
+  c: string;
 }
 ```
 
-## Options
+## 🔧 Options
 
 ```json
 {
-  "typescript-sort-keys/interface": [
+  "typescript-sort/sort-interface": [
     "error",
     "asc",
     { "caseSensitive": true, "natural": false, "requiredFirst": false }
@@ -42,201 +42,191 @@ interface U {
 }
 ```
 
-The 1st option is `"asc"` or `"desc"`.
+**Options for this rule:**
 
-- `"asc"` (default) - enforce properties to be in ascending order.
-- `"desc"` - enforce properties to be in descending order.
+- **Ordering**:
 
-The 2nd option is an object which has 3 properties.
+  - `"asc"` (default): Enforces properties to be in ascending order.
+  - `"desc"`: Enforces properties to be in descending order.
 
-- `caseSensitive` - if `true`, enforce properties to be in case-sensitive order. Default is `true`.
-- `natural` - if `true`, enforce properties to be in natural order. Default is `false`. Natural Order compares strings containing combination of letters and numbers in the way a human being would sort. It basically sorts numerically, instead of sorting alphabetically. So the number 10 comes after the number 3 in Natural Sorting.
-- `requiredFirst` - if `true`, enforce optional properties to come after required ones.
-
-Example for a list:
-
-With `natural` as true, the ordering would be
-1
-3
-6
-8
-10
-
-With `natural` as false, the ordering would be
-1
-10
-3
-6
-8
+- **Additional Configuration**:
+  - An object with 3 properties:
+    - `caseSensitive` (default: `true`): If `true`, enforces case-sensitive property order.
+    - `natural` (default: `false`): If `true`, enforces natural order, sorting strings containing a combination of letters and numbers as a human would, i.e., numerically.
+      - E.g. 1 2 10 3
+      - With `natural` set to `true`, the ordering would be: 1 2 3 10
+      - With `natural` set to `false`, the ordering would be: 1 2 10 3
+    - `requiredFirst` (default: `false`): If `true`, enforces optional properties to come after required ones.
 
 ### desc
 
-Examples of **incorrect** code for the `"desc"` option:
+❌ Examples of **incorrect** code for the `"desc"` option:
 
 ```ts
-/* eslint typescript-sort-keys/interface: ["error", "desc"] */
+/* eslint typescript-sort/sort-interface: ["error", "desc"] */
 
-interface U {
-  b: T;
-  c: T;
-  a: T;
+interface MyInterface {
+  b: string;
+  c: string;
+  a: string;
 }
-interface U {
-  b: T;
-  c: T;
-  a: T;
+interface MyInterface {
+  b: string;
+  c: string;
+  a: string;
 }
 
 // Case-sensitive by default.
-interface U {
-  C: T;
-  b: T;
-  a: T;
+interface MyInterface {
+  C: string;
+  b: string;
+  a: string;
 }
 
 // Non-required first order by default.
-interface U {
-  a: T;
-  b?: T;
-  c: T;
+interface MyInterface {
+  a: string;
+  b?: string;
+  c: string;
 }
 
 // Non-natural order by default.
-interface U {
-  10: T;
-  2: T;
-  1: T;
+interface MyInterface {
+  10: number;
+  2: number;
+  1: number;
 }
 ```
 
-Examples of **correct** code for the `"desc"` option:
+✅ Examples of **correct** code for the `"desc"` option:
 
 ```ts
-/* eslint typescript-sort-keys/interface: ["error", "desc"] */
+/* eslint typescript-sort/sort-interface: ["error", "desc"] */
 
-interface U {
-  c: T;
-  b: T;
-  a: T;
+interface MyInterface {
+  c: string;
+  b: string;
+  a: string;
 }
-interface U {
-  c: T;
-  b: T;
-  a: T;
+interface MyInterface {
+  c: string;
+  b: string;
+  a: string;
 }
 
 // Case-sensitive by default.
-interface U {
-  b: T;
-  a: T;
-  C: T;
+interface MyInterface {
+  b: string;
+  a: string;
+  C: string;
 }
 
 // Non-required first order by default.
-interface U {
-  c: T;
-  b?: T;
-  a: T;
+interface MyInterface {
+  c: string;
+  b?: string;
+  a: string;
 }
 
 // Non-natural order by default.
-interface U {
-  2: T;
-  10: T;
-  1: T;
+interface MyInterface {
+  2: number;
+  10: number;
+  1: number;
 }
 ```
 
 ### insensitive
 
-Examples of **incorrect** code for the `{ caseSensitive: false }` option:
+❌ Examples of **incorrect** code for the `{ caseSensitive: false }` option:
 
 ```ts
-/* eslint typescript-sort-keys/interface: ["error", "asc", { caseSensitive: false }] */
+/* eslint typescript-sort/sort-interface: ["error", "asc", { caseSensitive: false }] */
 
-interface U {
-  a: T;
-  c: T;
-  C: T;
-  b: T;
+interface MyInterface {
+  a: string;
+  c: string;
+  C: string;
+  b: string;
 }
-interface U {
-  a: T;
-  C: T;
-  c: T;
-  b: T;
+
+interface MyInterface {
+  a: string;
+  C: string;
+  c: string;
+  b: string;
 }
 ```
 
-Examples of **correct** code for the `{ caseSensitive: false }` option:
+✅ Examples of **correct** code for the `{ caseSensitive: false }` option:
 
 ```ts
-/* eslint typescript-sort-keys/interface: ["error", "asc", { caseSensitive: false }] */
+/* eslint typescript-sort/sort-interface: ["error", "asc", { caseSensitive: false }] */
 
-interface U {
-  a: T;
-  b: T;
-  c: T;
-  C: T;
+interface MyInterface {
+  a: string;
+  b: string;
+  c: string;
+  C: string;
 }
-interface U {
-  a: T;
-  b: T;
-  C: T;
-  c: T;
+interface MyInterface {
+  a: string;
+  b: string;
+  C: string;
+  c: string;
 }
 ```
 
 ### natural
 
-Examples of **incorrect** code for the `{natural: true}` option:
+❌ Examples of **incorrect** code for the `{natural: true}` option:
 
 ```ts
-/* eslint typescript-sort-keys/interface: ["error", "asc", { natural: true }] */
+/* eslint typescript-sort/sort-interface: ["error", "asc", { natural: true }] */
 
-interface U {
-  1: T;
-  10: T;
-  2: T;
+interface MyInterface {
+  1: number;
+  10: number;
+  2: number;
 }
 ```
 
-Examples of **correct** code for the `{natural: true}` option:
+✅ Examples of **correct** code for the `{natural: true}` option:
 
 ```ts
-/* eslint typescript-sort-keys/interface: ["error", "asc", { natural: true }] */
+/* eslint typescript-sort/sort-interface: ["error", "asc", { natural: true }] */
 
-interface U {
-  1: T;
-  2: T;
-  10: T;
+interface MyInterface {
+  1: number;
+  2: number;
+  10: number;
 }
 ```
 
 ### required
 
-Examples of **incorrect** code for the `{ requiredFirst: true }` option:
+❌ Examples of **incorrect** code for the `{ requiredFirst: true }` option:
 
 ```ts
-/* eslint typescript-sort-keys/interface: ["error", "asc", { requiredFirst: true }] */
+/* eslint typescript-sort/sort-interface: ["error", "asc", { requiredFirst: true }] */
 
-interface U {
-  d: T;
-  c?: T;
-  b?: T;
-  a: T;
+interface MyInterface {
+  d: string;
+  c?: string;
+  b?: string;
+  a: string;
 }
 ```
 
-Examples of **correct** code for the `{ requiredFirst: true }` option:
+✅ Examples of **correct** code for the `{ requiredFirst: true }` option:
 
 ```ts
-/* eslint typescript-sort-keys/interface: ["error", "asc", { requiredFirst: true }] */
+/* eslint typescript-sort/sort-interface: ["error", "asc", { requiredFirst: true }] */
 
-interface U {
-  a: T;
-  d: T;
-  b?: T;
-  c?: T;
+interface MyInterface {
+  a: string;
+  d: string;
+  b?: string;
+  c?: string;
 }
 ```
