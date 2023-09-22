@@ -5,10 +5,10 @@ import { sortArrowFuncObjectParams } from "./rules/sortArrowFuncObjectParams.ts"
 import recommended from "./config/recommended.ts";
 
 const rules = {
-  "sort-interface": sortInterface,
-  "sort-type": sortType,
-  "sort-enum": sortEnum,
-  "sort-arrowfunc-object-params": sortArrowFuncObjectParams,
+  interface: sortInterface,
+  type: sortType,
+  enum: sortEnum,
+  "arrowfunc-object-params": sortArrowFuncObjectParams,
 };
 
 const config = {

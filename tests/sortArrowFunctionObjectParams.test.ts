@@ -10,72 +10,68 @@ const ruleTester = new RuleTester({
   parser: parserResolver,
 });
 
-ruleTester.run(
-  "sort-arrowfunc-object-params",
-  sortArrowFuncObjectParams as any,
-  {
-    valid: [
-      noFormat`export const MyComponent = ({
+ruleTester.run("arrowfunc-object-params", sortArrowFuncObjectParams as any, {
+  valid: [
+    noFormat`export const MyComponent = ({
         a = 'default',
         b = 'default',
         c = 'default',
         d = 'default',
       }: MyComponentProps) => null;`,
-      noFormat`export const MyComponent = ({
+    noFormat`export const MyComponent = ({
         a = 'default',
         b = 'default',
       }) => null;`,
-    ],
-    invalid: [
-      {
-        code: noFormat`export const MyComponent = ({
+  ],
+  invalid: [
+    {
+      code: noFormat`export const MyComponent = ({
             b = 'default',
             a = 'default',
             c = 'default',
             d = 'default',
           }: MyComponentProps) => null;`,
-        errors: [{ messageId: "invalidOrder" }],
-        output: noFormat`export const MyComponent = ({
+      errors: [{ messageId: "invalidOrder" }],
+      output: noFormat`export const MyComponent = ({
             a = 'default',
             b = 'default',
             c = 'default',
             d = 'default',
           }: MyComponentProps) => null;`,
-      },
-      {
-        code: noFormat`export const MyComponent = ({
+    },
+    {
+      code: noFormat`export const MyComponent = ({
             b = 'default',
             a = 'default',
             c = 'default',
             d = 'default',
             ...rest,
           }: MyComponentProps) => null;`,
-        errors: [{ messageId: "invalidOrder" }],
-        output: noFormat`export const MyComponent = ({
+      errors: [{ messageId: "invalidOrder" }],
+      output: noFormat`export const MyComponent = ({
             a = 'default',
             b = 'default',
             c = 'default',
             d = 'default',
             ...rest,
           }: MyComponentProps) => null;`,
-      },
-      {
-        code: noFormat`export const MyComponent = ({
+    },
+    {
+      code: noFormat`export const MyComponent = ({
             a = 'default',
             b = 'default',
             d = 'default',
             c = 'default',
             ...rest,
           }: MyComponentProps) => null;`,
-        errors: [{ messageId: "invalidOrder" }],
-        output: noFormat`export const MyComponent = ({
+      errors: [{ messageId: "invalidOrder" }],
+      output: noFormat`export const MyComponent = ({
             a = 'default',
             b = 'default',
             c = 'default',
             d = 'default',
             ...rest,
           }: MyComponentProps) => null;`,
-      },
-    ],
-  }
-);
+    },
+  ],
+});

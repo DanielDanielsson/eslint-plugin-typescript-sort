@@ -1,12 +1,12 @@
 {
   "name": "eslint-plugin-typescript-sort",
-  "version": "0.1.8",
-  "main": "./lib/index.cjs.js",
+  "version": "0.1.9",
+  "main": "./lib/index.esm.js",
   "exports": {
     ".": {
       "import": "./lib/index.esm.js",
       "require": "./lib/index.cjs.js",
-      "default": "./lib/index.cjs.js"
+      "default": "./lib/index.esm.js"
     },
     "./package.json": "./package.json"
   },

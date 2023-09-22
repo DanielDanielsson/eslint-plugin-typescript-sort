@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { RuleTester, noFormat } from '@typescript-eslint/rule-tester';
+import { RuleTester, noFormat } from "@typescript-eslint/rule-tester";
 // import { parse } from 'flatted';
-import { sortType } from '../src/rules/sortType';
+import { sortType } from "../src/rules/sortType";
 
-const parserResolver = require.resolve('@typescript-eslint/parser');
+const parserResolver = require.resolve("@typescript-eslint/parser");
 
 const ruleTester = new RuleTester({
   parser: parserResolver,
 });
 
-ruleTester.run('sort-type', sortType as any, {
+ruleTester.run("type", sortType as any, {
   valid: [
     noFormat`type Foo = { a: string; b: string;}`,
     noFormat`type Foo = { a?: string; b?: string;}`,
@@ -55,7 +55,7 @@ ruleTester.run('sort-type', sortType as any, {
         b: string;
         a: string;
       }`,
-      errors: [{ messageId: 'invalidOrder' }],
+      errors: [{ messageId: "invalidOrder" }],
       output: noFormat`type Foo = {
         a: string;
         b: string;
@@ -66,7 +66,7 @@ ruleTester.run('sort-type', sortType as any, {
         b: string;
         a: string;
       }`,
-      errors: [{ messageId: 'invalidOrder' }],
+      errors: [{ messageId: "invalidOrder" }],
       output: noFormat`type Foo = {
         a: string;
         b: string;
@@ -78,7 +78,7 @@ ruleTester.run('sort-type', sortType as any, {
         a: string;
         c: string;
       }`,
-      errors: [{ messageId: 'invalidOrder' }],
+      errors: [{ messageId: "invalidOrder" }],
       output: noFormat`type Foo = {
         a: string;
         b: string;
@@ -91,7 +91,7 @@ ruleTester.run('sort-type', sortType as any, {
         a?: string;
         c: string;
       }`,
-      errors: [{ messageId: 'invalidOrder' }],
+      errors: [{ messageId: "invalidOrder" }],
       output: noFormat`type Foo = {
         a?: string;
         b: string;
