@@ -1,14 +1,14 @@
 import { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 import { TSESTree, AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { createSortReporter } from "./utils/plugin.ts";
-import { createRule, RuleMetaData } from "./utils/rule.ts";
+import { createSortReporter } from "./utils/plugin";
+import { createRule, RuleMetaData } from "./utils/rule";
 import {
   sortingOrderOptionSchema,
   SortingOrder,
   ErrorMessage,
   SortingOrderOption,
   SortingParamsOptions,
-} from "./common/options.ts";
+} from "./common/options";
 
 const getObjectBody = (node: TSESTree.TSTypeLiteral) =>
   node.type === AST_NODE_TYPES.TSTypeLiteral && node.members;

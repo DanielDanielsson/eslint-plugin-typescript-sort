@@ -1,14 +1,14 @@
 import { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/utils";
-import { createRule, RuleMetaData } from "./utils/rule.ts";
+import { createRule, RuleMetaData } from "./utils/rule";
 import {
   sortingOrderOptionSchema,
   SortingOrder,
   ErrorMessage,
   SortingOrderOption,
   SortingParamsOptions,
-} from "./common/options.ts";
-import { createSortReporter } from "./utils/plugin.ts";
+} from "./common/options";
+import { createSortReporter } from "./utils/plugin";
 
 const getObjectBody = (node: TSESTree.ArrowFunctionExpression) =>
   node.type === AST_NODE_TYPES.ArrowFunctionExpression && node.params;

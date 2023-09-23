@@ -1,6 +1,6 @@
 import { TSESTree, AST_NODE_TYPES } from "@typescript-eslint/utils";
 
-import { indexSignature } from "./common.ts";
+import { indexSignature } from "./common";
 
 export const getObjectBody = (
   node:

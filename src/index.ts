@@ -1,8 +1,8 @@
-import { sortInterface } from "./rules/sortInterface.ts";
-import { sortType } from "./rules/sortType.ts";
-import { sortEnum } from "./rules/sortEnum.ts";
-import { sortArrowFuncObjectParams } from "./rules/sortArrowFuncObjectParams.ts";
-import recommended from "./config/recommended.ts";
+import { sortInterface } from "./rules/sortInterface";
+import { sortType } from "./rules/sortType";
+import { sortEnum } from "./rules/sortEnum";
+import { sortArrowFuncObjectParams } from "./rules/sortArrowFuncObjectParams";
+import recommended from "./config/recommended";
 
 const rules = {
   interface: sortInterface,

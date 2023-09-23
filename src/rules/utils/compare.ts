@@ -1,6 +1,6 @@
 import naturalCompare from "natural-compare-lite";
 
-import { indexSignature } from "./common.ts";
+import { indexSignature } from "./common";
 
 const charCompare = (a: string, b: string) => {
   if (a < b) {

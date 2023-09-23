@@ -7,11 +7,11 @@ import {
   SourceCode,
 } from "@typescript-eslint/utils/ts-eslint";
 
-import { SortingOrder } from "../common/options.ts";
-import { Options as InterfaceRuleOptions } from "../sortInterface.ts";
-import { Options as StringEnumRuleOptions } from "../sortEnum.ts";
-import { getPropertyName, getPropertyIsOptional } from "./ast.ts";
-import { compareFn } from "./compare.ts";
+import { SortingOrder } from "../common/options";
+import { Options as InterfaceRuleOptions } from "../sortInterface";
+import { Options as StringEnumRuleOptions } from "../sortEnum";
+import { getPropertyName, getPropertyIsOptional } from "./ast";
+import { compareFn } from "./compare";
 
 type RuleOptions = InterfaceRuleOptions & StringEnumRuleOptions;
 
