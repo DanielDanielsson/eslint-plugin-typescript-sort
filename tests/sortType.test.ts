@@ -13,6 +13,19 @@ const ruleTester = new RuleTester({
 ruleTester.run("type", sortType as any, {
   valid: [
     noFormat`type Foo = { a: string; b: string;}`,
+    noFormat`type Foo = {
+      a: string;
+      b: {
+        c: string;
+        d: string;
+      };
+    }`,
+    noFormat`type Foo = {
+      a: string;
+      b: string;
+      c: string[];
+      d: string[];
+    }`,
     noFormat`type Foo = { a?: string; b?: string;}`,
     noFormat`type Foo = { a?: string; b: string;}`,
     noFormat`type Foo = { a: string; b: string;}`,
