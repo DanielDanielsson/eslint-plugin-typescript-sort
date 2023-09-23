@@ -33,8 +33,6 @@ Next, install `eslint-plugin-typescript-sort`:
 npm i --save-dev eslint-plugin-typescript-sort
 ```
 
-**Note:** If you installed ESLint globally then you must also install `eslint-plugin-typescript-sort` globally.
-
 ## Usage
 
 Everything is configured in your `.eslintrc` configuration file
@@ -44,6 +42,34 @@ Specify the parser for typescript files:
 ```json
 {
   "parser": "@typescript-eslint/parser"
+}
+```
+
+## Rules options
+
+- **Ordering**:
+
+  - `"asc"` (default): Enforces properties to be in ascending order.
+  - `"desc"`: Enforces properties to be in descending order.
+
+- **Additional Configuration**:
+  - Object with 3 properties:
+    - `caseSensitive` (default: `true`): If `true`, enforces case-sensitive property order.
+    - `natural` (default: `false`): If `true`, enforces natural order, sorting strings containing a combination of letters and numbers as a human would, i.e., numerically.
+      - E.g. 1 2 10 3
+      - With `natural` set to `true`, the ordering would be: 1 2 3 10
+      - With `natural` set to `false`, the ordering would be: 1 2 10 3
+    - `requiredFirst` (default: `false`): If `true`, enforces optional properties to come after required ones.
+
+E.g.
+
+```json
+{
+  "typescript-sort/interface": [
+    "error",
+    "asc",
+    { "caseSensitive": true, "natural": false, "requiredFirst": false }
+  ]
 }
 ```
 
