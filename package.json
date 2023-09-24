@@ -20,6 +20,10 @@
     "lint": "eslint --ext .ts,.tsx .",
     "lint:fix": "eslint --ext .ts,.tsx . --fix",
     "test": "jest --coverage --logHeapUsage",
+    "test:interface": "jest --coverage --logHeapUsage  -- interface.test.ts",
+    "test:type": "jest --coverage --logHeapUsage  -- sortType.test.ts",
+    "test:enum": "jest --coverage --logHeapUsage  -- sortEnum.test.ts",
+    "test:arrowfuncobjectprops": "jest --coverage --logHeapUsage  -- sortArrowFunctionObjectParams.test.ts",
     "compile": "rollup -c"
   },
   "dependencies": {
