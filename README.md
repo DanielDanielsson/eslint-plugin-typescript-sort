@@ -2,6 +2,10 @@
 
 Sort interfaces, types, string enums and arrow function object parameters.
 
+```sh
+npm i --save-dev eslint-plugin-typescript-sort
+```
+
 ## Supported Rules
 
 <!-- begin rule list -->
