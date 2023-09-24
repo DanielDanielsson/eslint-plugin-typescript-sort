@@ -17,7 +17,7 @@ const valid = [
    * default, asc, caseSensitive
    */
   {
-    code: "type T = {_:T; a:T; b:T;}",
+    code: noFormat`type T = {_:T; a:T; b:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -31,7 +31,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {a:T; b:T; c:T;}",
+    code: noFormat`type T = {a:T; b:T; c:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -45,7 +45,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {a:T; b:T; b_:T;}",
+    code: noFormat`type T = {a:T; b:T; b_:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -59,7 +59,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {C:T; b_:T; c:T;}",
+    code: noFormat`type T = {C:T; b_:T; c:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -73,7 +73,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {$:T; A:T; _:T; a:T;}",
+    code: noFormat`type T = {$:T; A:T; _:T; a:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -87,7 +87,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {1:T; '11':T; 2:T; A:T;}",
+    code: noFormat`type T = {1:T; '11':T; 2:T; A:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -101,7 +101,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {'#':T; 'Z':T; À:T; è:T;}",
+    code: noFormat`type T = {'#':T; 'Z':T; À:T; è:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -137,7 +137,7 @@ const valid = [
    * nested
    */
   {
-    code: "type T = {a:T; b:{x:T; y:T;}; c:T;}",
+    code: noFormat`type T = {a:T; b:{x:T; y:T;}; c:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -151,7 +151,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {a:T; b:{x:T; y:T; z:{i:T; j:T;};}; c:T;}",
+    code: noFormat`type T = {a:T; b:{x:T; y:T; z:{i:T; j:T;};}; c:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -164,70 +164,69 @@ const valid = [
       ],
     ],
   },
-  //TODO: move to type test
-  //   {
-  //     code: "type U = {a:T; b:{x:T; y:T;}; c:T;}",
-  //     optionsSet: [
-  //       [],
-  //       [SortingOrder.Ascending],
-  //       [SortingOrder.Ascending, { caseSensitive: true }],
-  //       [SortingOrder.Ascending, { natural: false }],
-  //       [SortingOrder.Ascending, { caseSensitive: true, natural: false }],
-  //       [
-  //         SortingOrder.Ascending,
-  //         { caseSensitive: true, natural: false, requiredFirst: false },
-  //       ],
-  //     ],
-  //   },
-  //   {
-  //     code: "type U = {a:T; b:{x:T; y:T; z:{i:T; j:T;};}; c:T;}",
-  //     optionsSet: [
-  //       [],
-  //       [SortingOrder.Ascending],
-  //       [SortingOrder.Ascending, { caseSensitive: true }],
-  //       [SortingOrder.Ascending, { natural: false }],
-  //       [SortingOrder.Ascending, { caseSensitive: true, natural: false }],
-  //       [
-  //         SortingOrder.Ascending,
-  //         { caseSensitive: true, natural: false, requiredFirst: false },
-  //       ],
-  //     ],
-  //   },
+  {
+    code: noFormat`type U = {a:T; b:{x:T; y:T;}; c:T;}`,
+    optionsSet: [
+      [],
+      [SortingOrder.Ascending],
+      [SortingOrder.Ascending, { caseSensitive: true }],
+      [SortingOrder.Ascending, { natural: false }],
+      [SortingOrder.Ascending, { caseSensitive: true, natural: false }],
+      [
+        SortingOrder.Ascending,
+        { caseSensitive: true, natural: false, requiredFirst: false },
+      ],
+    ],
+  },
+  {
+    code: noFormat`type U = {a:T; b:{x:T; y:T; z:{i:T; j:T;};}; c:T;}`,
+    optionsSet: [
+      [],
+      [SortingOrder.Ascending],
+      [SortingOrder.Ascending, { caseSensitive: true }],
+      [SortingOrder.Ascending, { natural: false }],
+      [SortingOrder.Ascending, { caseSensitive: true, natural: false }],
+      [
+        SortingOrder.Ascending,
+        { caseSensitive: true, natural: false, requiredFirst: false },
+      ],
+    ],
+  },
 
   /**
    * asc, insensitive
    */
   {
-    code: "type T = {_:T; a:T; b:T;}",
+    code: noFormat`type T = {_:T; a:T; b:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {a:T; b:T; c:T;}",
+    code: noFormat`type T = {a:T; b:T; c:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {a:T; b:T; b_:T;}",
+    code: noFormat`type T = {a:T; b:T; b_:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {b_:T; C:T; c:T;}",
+    code: noFormat`type T = {b_:T; C:T; c:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {b_:T; c:T; C:T;}",
+    code: noFormat`type T = {b_:T; c:T; C:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {$:T; _:T; A:T; a:T;}",
+    code: noFormat`type T = {$:T; _:T; A:T; a:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {1:T; '11':T; 2:T; A:T;}",
+    code: noFormat`type T = {1:T; '11':T; 2:T; A:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
 
   {
-    code: "type T = {'#':T; 'Z':T; À:T; è:T;}",
+    code: noFormat`type T = {'#':T; 'Z':T; À:T; è:T;}`,
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
 
@@ -235,49 +234,49 @@ const valid = [
    * asc, natural, insensitive
    */
   {
-    code: "type T = {_:T; a:T; b:T;}",
+    code: noFormat`type T = {_:T; a:T; b:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {a:T; b:T; c:T;}",
+    code: noFormat`type T = {a:T; b:T; c:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {a:T; b:T; b_:T;}",
+    code: noFormat`type T = {a:T; b:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {b_:T; C:T; c:T;}",
+    code: noFormat`type T = {b_:T; C:T; c:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {b_:T; c:T; C:T;}",
+    code: noFormat`type T = {b_:T; c:T; C:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {$:T; _:T; A:T; a:T;}",
+    code: noFormat`type T = {$:T; _:T; A:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {1:T; 2:T; '11':T; A:T;}",
+    code: noFormat`type T = {1:T; 2:T; '11':T; A:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {'#':T; 'Z':T; À:T; è:T;}",
+    code: noFormat`type T = {'#':T; 'Z':T; À:T; è:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
@@ -287,7 +286,7 @@ const valid = [
    * asc, natural, insensitive, required
    */
   {
-    code: "type T = {_:T; b:T; a?:T;}",
+    code: noFormat`type T = {_:T; b:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -296,7 +295,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {a:T; c:T; b?:T;}",
+    code: noFormat`type T = {a:T; c:T; b?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -305,7 +304,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {b:T; b_:T; a?:T;}",
+    code: noFormat`type T = {b:T; b_:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -314,7 +313,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {C:T; c:T; b_?:T;}",
+    code: noFormat`type T = {C:T; c:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -323,7 +322,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {c:T; C:T; b_?:T;}",
+    code: noFormat`type T = {c:T; C:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -332,7 +331,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {$:T; _:T; A?:T; a?:T;}",
+    code: noFormat`type T = {$:T; _:T; A?:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -341,7 +340,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {1:T; '11':T; A:T; 2?:T;}",
+    code: noFormat`type T = {1:T; '11':T; A:T; 2?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -350,7 +349,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {'Z':T; À:T; è:T; '#'?:T;}",
+    code: noFormat`type T = {'Z':T; À:T; è:T; '#'?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -363,35 +362,35 @@ const valid = [
    * asc, required
    */
   {
-    code: "type T = {_:T; b:T; a?:T;}",
+    code: noFormat`type T = {_:T; b:T; a?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {a:T; c:T; b?:T;}",
+    code: noFormat`type T = {a:T; c:T; b?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {b:T; b_:T; a?:T;}",
+    code: noFormat`type T = {b:T; b_:T; a?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {C:T; c:T; b_?:T;}",
+    code: noFormat`type T = {C:T; c:T; b_?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {1:T; 11:T; 9:T; 111?:T;}",
+    code: noFormat`type T = {1:T; 11:T; 9:T; 111?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {$:T; _:T; A?:T; a?:T;}",
+    code: noFormat`type T = {$:T; _:T; A?:T; a?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {10:T; '11':T; 1?:T; 12?:T; 2?:T;}",
+    code: noFormat`type T = {10:T; '11':T; 1?:T; 12?:T; 2?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {'Z':T; À:T; è:T; '#'?:T;}",
+    code: noFormat`type T = {'Z':T; À:T; è:T; '#'?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
 
@@ -399,7 +398,7 @@ const valid = [
    * asc, natural, insensitive, not-required
    */
   {
-    code: "type T = {_:T; a?:T; b:T;}",
+    code: noFormat`type T = {_:T; a?:T; b:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -408,7 +407,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {a:T; b?:T; c:T;}",
+    code: noFormat`type T = {a:T; b?:T; c:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -417,7 +416,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {a?:T; b:T; b_:T;}",
+    code: noFormat`type T = {a?:T; b:T; b_:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -426,7 +425,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {b_?:T; C:T; c:T;}",
+    code: noFormat`type T = {b_?:T; C:T; c:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -435,7 +434,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {b_?:T; c:T; C:T;}",
+    code: noFormat`type T = {b_?:T; c:T; C:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -444,7 +443,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {$:T; _:T; A?:T; a?:T;}",
+    code: noFormat`type T = {$:T; _:T; A?:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -453,7 +452,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {1:T;  2?:T; '11':T; A:T;}",
+    code: noFormat`type T = {1:T;  2?:T; '11':T; A:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -462,7 +461,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {'#'?:T; 'Z':T; À:T; è:T;}",
+    code: noFormat`type T = {'#'?:T; 'Z':T; À:T; è:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -475,7 +474,7 @@ const valid = [
    * desc
    */
   {
-    code: "type T = {b:T; a:T; _:T;}",
+    code: noFormat`type T = {b:T; a:T; _:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -484,7 +483,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {c:T; b:T; a:T;}",
+    code: noFormat`type T = {c:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -493,7 +492,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {b_:T; b:T; a:T;}",
+    code: noFormat`type T = {b_:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -502,7 +501,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {c:T; b_:T; C:T;}",
+    code: noFormat`type T = {c:T; b_:T; C:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -511,7 +510,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {a:T; _:T; A:T; $:T;}",
+    code: noFormat`type T = {a:T; _:T; A:T; $:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -520,7 +519,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {A:T; 2:T; '11':T; 1:T;}",
+    code: noFormat`type T = {A:T; 2:T; '11':T; 1:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -529,7 +528,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {è:T; À:T; 'Z':T; '#':T;}",
+    code: noFormat`type T = {è:T; À:T; 'Z':T; '#':T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -542,56 +541,56 @@ const valid = [
    * desc, insensitive
    */
   {
-    code: "type T = {b:T; a:T; _:T;}",
+    code: noFormat`type T = {b:T; a:T; _:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "type T = {c:T; b:T; a:T;}",
+    code: noFormat`type T = {c:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "type T = {b_:T; b:T; a:T;}",
+    code: noFormat`type T = {b_:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "type T = {c:T; C:T; b_:T;}",
+    code: noFormat`type T = {c:T; C:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "type T = {C:T; c:T; b_:T;}",
+    code: noFormat`type T = {C:T; c:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "type T = {a:T; A:T; _:T; $:T;}",
+    code: noFormat`type T = {a:T; A:T; _:T; $:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "type T = {A:T; 2:T; '11':T; 1:T;}",
+    code: noFormat`type T = {A:T; 2:T; '11':T; 1:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "type T = {è:T; À:T; 'Z':T; '#':T;}",
+    code: noFormat`type T = {è:T; À:T; 'Z':T; '#':T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
@@ -602,49 +601,49 @@ const valid = [
    * desc, natural
    */
   {
-    code: "type T = {b:T; a:T; _:T;}",
+    code: noFormat`type T = {b:T; a:T; _:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "type T = {c:T; b:T; a:T;}",
+    code: noFormat`type T = {c:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "type T = {b_:T; b:T; a:T;}",
+    code: noFormat`type T = {b_:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "type T = {c:T; b_:T; C:T;}",
+    code: noFormat`type T = {c:T; b_:T; C:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "type T = {a:T; A:T; _:T; $:T;}",
+    code: noFormat`type T = {a:T; A:T; _:T; $:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "type T = {A:T; '11':T; 2:T; 1:T;}",
+    code: noFormat`type T = {A:T; '11':T; 2:T; 1:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "type T = {è:T; À:T; 'Z':T; '#':T;}",
+    code: noFormat`type T = {è:T; À:T; 'Z':T; '#':T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
@@ -655,49 +654,49 @@ const valid = [
    * desc, natural, insensitive
    */
   {
-    code: "type T = {b:T; a:T; _:T;}",
+    code: noFormat`type T = {b:T; a:T; _:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {c:T; b:T; a:T;}",
+    code: noFormat`type T = {c:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {b_:T; b:T; a:T;}",
+    code: noFormat`type T = {b_:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {c:T; C:T; b_:T;}",
+    code: noFormat`type T = {c:T; C:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {C:T; c:T; b_:T;}",
+    code: noFormat`type T = {C:T; c:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {a:T; A:T; _:T; $:T;}",
+    code: noFormat`type T = {a:T; A:T; _:T; $:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {A:T; '11':T; 2:T; 1:T;}",
+    code: noFormat`type T = {A:T; '11':T; 2:T; 1:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "type T = {è:T; À:T; 'Z':T; '#':T;}",
+    code: noFormat`type T = {è:T; À:T; 'Z':T; '#':T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
@@ -707,7 +706,7 @@ const valid = [
    * desc, natural, insensitive, required
    */
   {
-    code: "type T = {b:T; _:T; a?:T;}",
+    code: noFormat`type T = {b:T; _:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -716,7 +715,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {c:T; a:T; b?:T;}",
+    code: noFormat`type T = {c:T; a:T; b?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -725,7 +724,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {b_:T; b:T; a?:T;}",
+    code: noFormat`type T = {b_:T; b:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -734,7 +733,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {c:T; C:T; b_?:T;}",
+    code: noFormat`type T = {c:T; C:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -743,7 +742,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {C:T; c:T; b_?:T;}",
+    code: noFormat`type T = {C:T; c:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -752,7 +751,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {_:T; $:T; a?:T; A?:T;}",
+    code: noFormat`type T = {_:T; $:T; a?:T; A?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -761,7 +760,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = { A:T; '11':T; 1:T; 2?:T;}",
+    code: noFormat`type T = { A:T; '11':T; 1:T; 2?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -770,7 +769,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {è:T; 'Z':T; À?:T; '#'?:T;}",
+    code: noFormat`type T = {è:T; 'Z':T; À?:T; '#'?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -783,35 +782,35 @@ const valid = [
    * desc, required
    */
   {
-    code: "type T = {b:T; _:T; a?:T;}",
+    code: noFormat`type T = {b:T; _:T; a?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {c:T; a:T; b?:T;}",
+    code: noFormat`type T = {c:T; a:T; b?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {b_:T; b:T; a?:T;}",
+    code: noFormat`type T = {b_:T; b:T; a?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {c:T; C:T; b_?:T;}",
+    code: noFormat`type T = {c:T; C:T; b_?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {9:T; 11:T; 1:T; 111?:T;}",
+    code: noFormat`type T = {9:T; 11:T; 1:T; 111?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {_:T; $:T; a?:T; A?:T;}",
+    code: noFormat`type T = {_:T; $:T; a?:T; A?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {'11':T; 10:T; 2?:T; 12?:T; 1?:T;}",
+    code: noFormat`type T = {'11':T; 10:T; 2?:T; 12?:T; 1?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "type T = {è:T; À:T; 'Z':T; '#'?:T;}",
+    code: noFormat`type T = {è:T; À:T; 'Z':T; '#'?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
 
@@ -819,7 +818,7 @@ const valid = [
    * desc, natural, insensitive, not-required
    */
   {
-    code: "type T = {b:T; a?:T; _:T;}",
+    code: noFormat`type T = {b:T; a?:T; _:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -828,7 +827,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {c:T; b?:T; a:T;}",
+    code: noFormat`type T = {c:T; b?:T; a:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -837,7 +836,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {b_:T; b:T; a?:T;}",
+    code: noFormat`type T = {b_:T; b:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -846,7 +845,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {c:T; C:T; b_?:T;}",
+    code: noFormat`type T = {c:T; C:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -855,7 +854,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {C:T; c:T; b_?:T;}",
+    code: noFormat`type T = {C:T; c:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -864,7 +863,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {a?:T; A?:T; _:T; $:T;}",
+    code: noFormat`type T = {a?:T; A?:T; _:T; $:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -873,7 +872,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {A:T; '11':T; 2?:T; 1:T;}",
+    code: noFormat`type T = {A:T; '11':T; 2?:T; 1:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -882,7 +881,7 @@ const valid = [
     ],
   },
   {
-    code: "type T = {è:T; À:T; 'Z':T; '#'?:T;}",
+    code: noFormat`type T = {è:T; À:T; 'Z':T; '#'?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -895,11 +894,11 @@ const valid = [
    * index signatures
    */
   {
-    code: `type T =<T> { [nkey: number]: T; [skey: string]: T; $: T; A: T; _: T; a: T; }`,
+    code: `type T<T> = { [nkey: number]: T; [skey: string]: T; $: T; A: T; _: T; a: T; }`,
     optionsSet: [[SortingOrder.Ascending]],
   },
   {
-    code: `type T =<T> { a: T; _: T; A: T; $: T; [skey: string]: T; [nkey: number]: T; }`,
+    code: `type T<T> = { a: T; _: T; A: T; $: T; [skey: string]: T; [nkey: number]: T; }`,
     optionsSet: [[SortingOrder.Descending]],
   },
 ];
@@ -909,7 +908,7 @@ const invalid = [
    * default (asc)
    */
   {
-    code: "type T = {a:T; _:T; b:T;}",
+    code: noFormat`type T = {a:T; _:T; b:T;}`,
     output: "type T = {_:T; a:T; b:T;}",
     errors: [
       "Expected type keys to be in ascending order. '_' should be before 'a'.",
@@ -927,7 +926,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {a:T; c:T; b:T;}",
+    code: noFormat`type T = {a:T; c:T; b:T;}`,
     output: "type T = {a:T; b:T; c:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'b' should be before 'c'.",
@@ -945,7 +944,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b_:T; a:T; b:T;}",
+    code: noFormat`type T = {b_:T; a:T; b:T;}`,
     output: "type T = {a:T; b_:T; b:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'a' should be before 'b_'.",
@@ -963,7 +962,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b_:T; c:T; C:T;}",
+    code: noFormat`type T = {b_:T; c:T; C:T;}`,
     output: "type T = {C:T; c:T; b_:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'C' should be before 'c'.",
@@ -981,7 +980,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {$:T; _:T; A:T; a:T;}",
+    code: noFormat`type T = {$:T; _:T; A:T; a:T;}`,
     output: "type T = {$:T; A:T; _:T; a:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'A' should be before '_'.",
@@ -999,7 +998,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`type T = {1:T; 2:T; A:T; '11':T;}`,
     output: "type T = {1:T; '11':T; A:T; 2:T;}",
     errors: [
       "Expected type keys to be in ascending order. '11' should be before 'A'.",
@@ -1017,7 +1016,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#':T; À:T; 'Z':T; è:T;}`,
     output: "type T = {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'Z' should be before 'À'.",
@@ -1039,7 +1038,7 @@ const invalid = [
    * methods
    */
   {
-    code: "type T = {1:T; 2:T; A():T; '11':T;}",
+    code: noFormat`type T = {1:T; 2:T; A():T; '11':T;}`,
     output: "type T = {1:T; '11':T; A():T; 2:T;}",
     errors: [
       "Expected type keys to be in ascending order. '11' should be before 'A'.",
@@ -1057,7 +1056,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {'#'():T; À():T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#'():T; À():T; 'Z':T; è:T;}`,
     output: "type T = {'#'():T; 'Z':T; À():T; è:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'Z' should be before 'À'.",
@@ -1106,9 +1105,8 @@ const invalid = [
     code: noFormat`type T = {a:T; c: { y: string; x: string; }; b:T;}`,
     output: noFormat`type T = {a:T; b:T; c: { y: string; x: string; };}`,
     errors: [
+      "Expected type keys to be in ascending order. 'x' should be before 'y'.",
       "Expected type keys to be in ascending order. 'b' should be before 'c'.",
-      //   "Expected type keys to be in ascending order. 'c' should be before 'd'.",
-      //   "Expected type keys to be in ascending order. 'x' should be before 'y'.",
     ],
     optionsSet: [
       [],
@@ -1122,32 +1120,32 @@ const invalid = [
       ],
     ],
   },
-  // TODO: Move to type
-  //   {
-  //     code: "type U = {a:T; c:{y:T; x:T;}, b:T;}",
-  //     output: "type U = {a:T; b:T; c:{y:T; x:T;}}",
-  //     errors: [
-  //       "Expected type keys to be in ascending order. 'x' should be before 'y'.",
-  //       "Expected type keys to be in ascending order. 'b' should be before 'c'.",
-  //     ],
-  //     optionsSet: [
-  //       [],
-  //       [SortingOrder.Ascending],
-  //       [SortingOrder.Ascending, { caseSensitive: true }],
-  //       [SortingOrder.Ascending, { natural: false }],
-  //       [SortingOrder.Ascending, { caseSensitive: true, natural: false }],
-  //       [
-  //         SortingOrder.Ascending,
-  //         { caseSensitive: true, natural: false, requiredFirst: false },
-  //       ],
-  //     ],
-  //   },
+
+  {
+    code: noFormat`type U = {a:T; c:{y:T; x:T;}, b:T;}`,
+    output: "type U = {a:T; b:T; c:{y:T; x:T;}}",
+    errors: [
+      "Expected type keys to be in ascending order. 'x' should be before 'y'.",
+      "Expected type keys to be in ascending order. 'b' should be before 'c'.",
+    ],
+    optionsSet: [
+      [],
+      [SortingOrder.Ascending],
+      [SortingOrder.Ascending, { caseSensitive: true }],
+      [SortingOrder.Ascending, { natural: false }],
+      [SortingOrder.Ascending, { caseSensitive: true, natural: false }],
+      [
+        SortingOrder.Ascending,
+        { caseSensitive: true, natural: false, requiredFirst: false },
+      ],
+    ],
+  },
 
   /**
    * asc
    */
   {
-    code: "type T = {a:T; _:T; b:T;}",
+    code: noFormat`type T = {a:T; _:T; b:T;}`,
     output: "type T = {_:T; a:T; b:T;}",
     errors: [
       "Expected type keys to be in ascending order. '_' should be before 'a'.",
@@ -1165,7 +1163,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {a:T; c:T; b:T;}",
+    code: noFormat`type T = {a:T; c:T; b:T;}`,
     output: "type T = {a:T; b:T; c:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'b' should be before 'c'.",
@@ -1183,7 +1181,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b_:T; a:T; b:T;}",
+    code: noFormat`type T = {b_:T; a:T; b:T;}`,
     output: "type T = {a:T; b_:T; b:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'a' should be before 'b_'.",
@@ -1201,7 +1199,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b_:T; c:T; C:T;}",
+    code: noFormat`type T = {b_:T; c:T; C:T;}`,
     output: "type T = {C:T; c:T; b_:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'C' should be before 'c'.",
@@ -1219,7 +1217,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {$:T; _:T; A:T; a:T;}",
+    code: noFormat`type T = {$:T; _:T; A:T; a:T;}`,
     output: "type T = {$:T; A:T; _:T; a:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'A' should be before '_'.",
@@ -1237,7 +1235,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`type T = {1:T; 2:T; A:T; '11':T;}`,
     output: "type T = {1:T; '11':T; A:T; 2:T;}",
     errors: [
       "Expected type keys to be in ascending order. '11' should be before 'A'.",
@@ -1255,7 +1253,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#':T; À:T; 'Z':T; è:T;}`,
     output: "type T = {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected type keys to be in ascending order. 'Z' should be before 'À'.",
@@ -1273,7 +1271,7 @@ const invalid = [
    * asc, insensitive
    */
   {
-    code: "type T = {a:T; _:T; b:T;}",
+    code: noFormat`type T = {a:T; _:T; b:T;}`,
     output: "type T = {_:T; a:T; b:T;}",
     errors: [
       "Expected type keys to be in insensitive ascending order. '_' should be before 'a'.",
@@ -1281,7 +1279,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {a:T; c:T; b:T;}",
+    code: noFormat`type T = {a:T; c:T; b:T;}`,
     output: "type T = {a:T; b:T; c:T;}",
     errors: [
       "Expected type keys to be in insensitive ascending order. 'b' should be before 'c'.",
@@ -1289,7 +1287,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {b_:T; a:T; b:T;}",
+    code: noFormat`type T = {b_:T; a:T; b:T;}`,
     output: "type T = {a:T; b_:T; b:T;}",
     errors: [
       "Expected type keys to be in insensitive ascending order. 'a' should be before 'b_'.",
@@ -1297,7 +1295,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {$:T; A:T; _:T; a:T;}",
+    code: noFormat`type T = {$:T; A:T; _:T; a:T;}`,
     output: "type T = {$:T; _:T; A:T; a:T;}",
     errors: [
       "Expected type keys to be in insensitive ascending order. '_' should be before 'A'.",
@@ -1305,7 +1303,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`type T = {1:T; 2:T; A:T; '11':T;}`,
     output: "type T = {1:T; '11':T; A:T; 2:T;}",
     errors: [
       "Expected type keys to be in insensitive ascending order. '11' should be before 'A'.",
@@ -1313,7 +1311,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#':T; À:T; 'Z':T; è:T;}`,
     output: "type T = {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected type keys to be in insensitive ascending order. 'Z' should be before 'À'.",
@@ -1325,7 +1323,7 @@ const invalid = [
    * asc, natural
    */
   {
-    code: "type T = {a:T; _:T; b:T;}",
+    code: noFormat`type T = {a:T; _:T; b:T;}`,
     output: "type T = {_:T; a:T; b:T;}",
     errors: [
       "Expected type keys to be in natural ascending order. '_' should be before 'a'.",
@@ -1333,7 +1331,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "type T = {a:T; c:T; b:T;}",
+    code: noFormat`type T = {a:T; c:T; b:T;}`,
     output: "type T = {a:T; b:T; c:T;}",
     errors: [
       "Expected type keys to be in natural ascending order. 'b' should be before 'c'.",
@@ -1341,7 +1339,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "type T = {b_:T; a:T; b:T;}",
+    code: noFormat`type T = {b_:T; a:T; b:T;}`,
     output: "type T = {a:T; b_:T; b:T;}",
     errors: [
       "Expected type keys to be in natural ascending order. 'a' should be before 'b_'.",
@@ -1349,7 +1347,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "type T = {b_:T; c:T; C:T;}",
+    code: noFormat`type T = {b_:T; c:T; C:T;}`,
     output: "type T = {C:T; c:T; b_:T;}",
     errors: [
       "Expected type keys to be in natural ascending order. 'C' should be before 'c'.",
@@ -1357,7 +1355,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "type T = {$:T; A:T; _:T; a:T;}",
+    code: noFormat`type T = {$:T; A:T; _:T; a:T;}`,
     output: "type T = {$:T; _:T; A:T; a:T;}",
     errors: [
       "Expected type keys to be in natural ascending order. '_' should be before 'A'.",
@@ -1365,7 +1363,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "type T = {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`type T = {1:T; 2:T; A:T; '11':T;}`,
     output: "type T = {1:T; 2:T; '11':T; A:T;}",
     errors: [
       "Expected type keys to be in natural ascending order. '11' should be before 'A'.",
@@ -1373,7 +1371,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "type T = {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#':T; À:T; 'Z':T; è:T;}`,
     output: "type T = {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected type keys to be in natural ascending order. 'Z' should be before 'À'.",
@@ -1385,7 +1383,7 @@ const invalid = [
    * asc, natural, insensitive
    */
   {
-    code: "type T = {a:T; _:T; b:T;}",
+    code: noFormat`type T = {a:T; _:T; b:T;}`,
     output: "type T = {_:T; a:T; b:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. '_' should be before 'a'.",
@@ -1395,7 +1393,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {a:T; c:T; b:T;}",
+    code: noFormat`type T = {a:T; c:T; b:T;}`,
     output: "type T = {a:T; b:T; c:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. 'b' should be before 'c'.",
@@ -1405,7 +1403,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b_:T; a:T; b:T;}",
+    code: noFormat`type T = {b_:T; a:T; b:T;}`,
     output: "type T = {a:T; b_:T; b:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. 'a' should be before 'b_'.",
@@ -1415,7 +1413,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {$:T; A:T; _:T; a:T;}",
+    code: noFormat`type T = {$:T; A:T; _:T; a:T;}`,
     output: "type T = {$:T; _:T; A:T; a:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. '_' should be before 'A'.",
@@ -1425,7 +1423,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {1:T; '11':T; 2:T; A:T;}",
+    code: noFormat`type T = {1:T; '11':T; 2:T; A:T;}`,
     output: "type T = {1:T; 2:T; '11':T; A:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. '2' should be before '11'.",
@@ -1435,7 +1433,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#':T; À:T; 'Z':T; è:T;}`,
     output: "type T = {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. 'Z' should be before 'À'.",
@@ -1449,7 +1447,7 @@ const invalid = [
    * asc, natural, insensitive, required
    */
   {
-    code: "type T = {_:T; a?:T; b:T;}",
+    code: noFormat`type T = {_:T; a?:T; b:T;}`,
     output: "type T = {_:T; b:T; a?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive ascending order. 'b' should be before 'a'.",
@@ -1462,7 +1460,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {a:T; b?:T; c:T;}",
+    code: noFormat`type T = {a:T; b?:T; c:T;}`,
     output: "type T = {a:T; c:T; b?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive ascending order. 'c' should be before 'b'.",
@@ -1475,7 +1473,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b:T; a?:T; b_:T;}",
+    code: noFormat`type T = {b:T; a?:T; b_:T;}`,
     output: "type T = {b:T; b_:T; a?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive ascending order. 'b_' should be before 'a'.",
@@ -1488,7 +1486,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {C:T; b_?:T; c:T;}",
+    code: noFormat`type T = {C:T; b_?:T; c:T;}`,
     output: "type T = {C:T; c:T; b_?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive ascending order. 'c' should be before 'b_'.",
@@ -1501,7 +1499,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {C:T; b_?:T; c:T;}",
+    code: noFormat`type T = {C:T; b_?:T; c:T;}`,
     output: "type T = {C:T; c:T; b_?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive ascending order. 'c' should be before 'b_'.",
@@ -1514,7 +1512,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {$:T; A?:T; _:T; a?:T;}",
+    code: noFormat`type T = {$:T; A?:T; _:T; a?:T;}`,
     output: "type T = {$:T; _:T; A?:T; a?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive ascending order. '_' should be before 'A'.",
@@ -1527,7 +1525,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {1:T; '11':T; 2?:T; A:T;}",
+    code: noFormat`type T = {1:T; '11':T; 2?:T; A:T;}`,
     output: "type T = {1:T; '11':T; A:T; 2?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive ascending order. 'A' should be before '2'.",
@@ -1540,7 +1538,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {'Z':T; À:T; '#'?:T; è:T;}",
+    code: noFormat`type T = {'Z':T; À:T; '#'?:T; è:T;}`,
     output: "type T = {'Z':T; À:T; è:T; '#'?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive ascending order. 'è' should be before '#'.",
@@ -1557,7 +1555,7 @@ const invalid = [
    * asc, natural, insensitive, not-required
    */
   {
-    code: "type T = {_:T; b:T; a?:T;}",
+    code: noFormat`type T = {_:T; b:T; a?:T;}`,
     output: "type T = {_:T; a?:T; b:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. 'a' should be before 'b'.",
@@ -1570,7 +1568,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b?:T; a:T; c:T;}",
+    code: noFormat`type T = {b?:T; a:T; c:T;}`,
     output: "type T = {a:T; b?:T; c:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. 'a' should be before 'b'.",
@@ -1583,7 +1581,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b:T; a?:T; b_:T;}",
+    code: noFormat`type T = {b:T; a?:T; b_:T;}`,
     output: "type T = {a?:T; b:T; b_:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. 'a' should be before 'b'.",
@@ -1596,7 +1594,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {C:T; c:T; b_?:T;}",
+    code: noFormat`type T = {C:T; c:T; b_?:T;}`,
     output: "type T = {b_?:T; c:T; C:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. 'b_' should be before 'c'.",
@@ -1609,7 +1607,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {C:T; b_?:T; c:T;}",
+    code: noFormat`type T = {C:T; b_?:T; c:T;}`,
     output: "type T = {b_?:T; C:T; c:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. 'b_' should be before 'C'.",
@@ -1622,7 +1620,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {$:T; A?:T; _:T; a?:T;}",
+    code: noFormat`type T = {$:T; A?:T; _:T; a?:T;}`,
     output: "type T = {$:T; _:T; A?:T; a?:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. '_' should be before 'A'.",
@@ -1635,7 +1633,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {1:T; '11':T; 2?:T; A:T;}",
+    code: noFormat`type T = {1:T; '11':T; 2?:T; A:T;}`,
     output: "type T = {1:T; 2?:T; '11':T; A:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. '2' should be before '11'.",
@@ -1648,7 +1646,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {'Z':T; À:T; '#'?:T; è:T;}",
+    code: noFormat`type T = {'Z':T; À:T; '#'?:T; è:T;}`,
     output: "type T = {'#'?:T; À:T; 'Z':T; è:T;}",
     errors: [
       "Expected type keys to be in natural insensitive ascending order. '#' should be before 'À'.",
@@ -1665,7 +1663,7 @@ const invalid = [
    * desc
    */
   {
-    code: "type T = {a:T; _:T; b:T;}",
+    code: noFormat`type T = {a:T; _:T; b:T;}`,
     output: "type T = {b:T; _:T; a:T;}",
     errors: [
       "Expected type keys to be in descending order. 'b' should be before '_'.",
@@ -1673,7 +1671,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "type T = {a:T; c:T; b:T;}",
+    code: noFormat`type T = {a:T; c:T; b:T;}`,
     output: "type T = {c:T; a:T; b:T;}",
     errors: [
       "Expected type keys to be in descending order. 'c' should be before 'a'.",
@@ -1681,7 +1679,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "type T = {b_:T; a:T; b:T;}",
+    code: noFormat`type T = {b_:T; a:T; b:T;}`,
     output: "type T = {b_:T; b:T; a:T;}",
     errors: [
       "Expected type keys to be in descending order. 'b' should be before 'a'.",
@@ -1689,7 +1687,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "type T = {b_:T; c:T; C:T;}",
+    code: noFormat`type T = {b_:T; c:T; C:T;}`,
     output: "type T = {c:T; b_:T; C:T;}",
     errors: [
       "Expected type keys to be in descending order. 'c' should be before 'b_'.",
@@ -1697,7 +1695,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "type T = {$:T; _:T; A:T; a:T;}",
+    code: noFormat`type T = {$:T; _:T; A:T; a:T;}`,
     output: "type T = {a:T; _:T; A:T; $:T;}",
     errors: [
       "Expected type keys to be in descending order. '_' should be before '$'.",
@@ -1706,7 +1704,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "type T = {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`type T = {1:T; 2:T; A:T; '11':T;}`,
     output: "type T = {A:T; 2:T; 1:T; '11':T;}",
     errors: [
       "Expected type keys to be in descending order. '2' should be before '1'.",
@@ -1715,7 +1713,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "type T = {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#':T; À:T; 'Z':T; è:T;}`,
     output: "type T = {è:T; À:T; 'Z':T; '#':T;}",
     errors: [
       "Expected type keys to be in descending order. 'À' should be before '#'.",
@@ -1728,7 +1726,7 @@ const invalid = [
    * desc, insensitive
    */
   {
-    code: "type T = {a:T; _:T; b:T;}",
+    code: noFormat`type T = {a:T; _:T; b:T;}`,
     output: "type T = {b:T; _:T; a:T;}",
     errors: [
       "Expected type keys to be in insensitive descending order. 'b' should be before '_'.",
@@ -1736,7 +1734,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {a:T; c:T; b:T;}",
+    code: noFormat`type T = {a:T; c:T; b:T;}`,
     output: "type T = {c:T; a:T; b:T;}",
     errors: [
       "Expected type keys to be in insensitive descending order. 'c' should be before 'a'.",
@@ -1744,7 +1742,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {b_:T; a:T; b:T;}",
+    code: noFormat`type T = {b_:T; a:T; b:T;}`,
     output: "type T = {b_:T; b:T; a:T;}",
     errors: [
       "Expected type keys to be in insensitive descending order. 'b' should be before 'a'.",
@@ -1752,7 +1750,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {b_:T; c:T; C:T;}",
+    code: noFormat`type T = {b_:T; c:T; C:T;}`,
     output: "type T = {c:T; b_:T; C:T;}",
     errors: [
       "Expected type keys to be in insensitive descending order. 'c' should be before 'b_'.",
@@ -1760,7 +1758,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {$:T; _:T; A:T; a:T;}",
+    code: noFormat`type T = {$:T; _:T; A:T; a:T;}`,
     output: "type T = {A:T; _:T; $:T; a:T;}",
     errors: [
       "Expected type keys to be in insensitive descending order. '_' should be before '$'.",
@@ -1769,7 +1767,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`type T = {1:T; 2:T; A:T; '11':T;}`,
     output: "type T = {A:T; 2:T; 1:T; '11':T;}",
     errors: [
       "Expected type keys to be in insensitive descending order. '2' should be before '1'.",
@@ -1778,7 +1776,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "type T = {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#':T; À:T; 'Z':T; è:T;}`,
     output: "type T = {è:T; À:T; 'Z':T; '#':T;}",
     errors: [
       "Expected type keys to be in insensitive descending order. 'À' should be before '#'.",
@@ -1791,7 +1789,7 @@ const invalid = [
    * desc, natural
    */
   {
-    code: "type T = {a:T; _:T; b:T;}",
+    code: noFormat`type T = {a:T; _:T; b:T;}`,
     output: "type T = {b:T; _:T; a:T;}",
     errors: [
       "Expected type keys to be in natural descending order. 'b' should be before '_'.",
@@ -1799,7 +1797,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "type T = {a:T; c:T; b:T;}",
+    code: noFormat`type T = {a:T; c:T; b:T;}`,
     output: "type T = {c:T; a:T; b:T;}",
     errors: [
       "Expected type keys to be in natural descending order. 'c' should be before 'a'.",
@@ -1807,7 +1805,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "type T = {b_:T; a:T; b:T;}",
+    code: noFormat`type T = {b_:T; a:T; b:T;}`,
     output: "type T = {b_:T; b:T; a:T;}",
     errors: [
       "Expected type keys to be in natural descending order. 'b' should be before 'a'.",
@@ -1815,7 +1813,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "type T = {b_:T; c:T; C:T;}",
+    code: noFormat`type T = {b_:T; c:T; C:T;}`,
     output: "type T = {c:T; b_:T; C:T;}",
     errors: [
       "Expected type keys to be in natural descending order. 'c' should be before 'b_'.",
@@ -1823,7 +1821,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "type T = {$:T; _:T; A:T; a:T;}",
+    code: noFormat`type T = {$:T; _:T; A:T; a:T;}`,
     output: "type T = {a:T; _:T; A:T; $:T;}",
     errors: [
       "Expected type keys to be in natural descending order. '_' should be before '$'.",
@@ -1833,7 +1831,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "type T = {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`type T = {1:T; 2:T; A:T; '11':T;}`,
     output: "type T = {A:T; 2:T; 1:T; '11':T;}",
     errors: [
       "Expected type keys to be in natural descending order. '2' should be before '1'.",
@@ -1842,7 +1840,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "type T = {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#':T; À:T; 'Z':T; è:T;}`,
     output: "type T = {è:T; À:T; 'Z':T; '#':T;}",
     errors: [
       "Expected type keys to be in natural descending order. 'À' should be before '#'.",
@@ -1855,7 +1853,7 @@ const invalid = [
    * desc, natural, insensitive
    */
   {
-    code: "type T = {a:T; _:T; b:T;}",
+    code: noFormat`type T = {a:T; _:T; b:T;}`,
     output: "type T = {b:T; _:T; a:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'b' should be before '_'.",
@@ -1865,7 +1863,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {a:T; c:T; b:T;}",
+    code: noFormat`type T = {a:T; c:T; b:T;}`,
     output: "type T = {c:T; a:T; b:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'c' should be before 'a'.",
@@ -1875,7 +1873,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b_:T; a:T; b:T;}",
+    code: noFormat`type T = {b_:T; a:T; b:T;}`,
     output: "type T = {b_:T; b:T; a:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'b' should be before 'a'.",
@@ -1885,7 +1883,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b_:T; c:T; C:T;}",
+    code: noFormat`type T = {b_:T; c:T; C:T;}`,
     output: "type T = {c:T; b_:T; C:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'c' should be before 'b_'.",
@@ -1895,7 +1893,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {$:T; _:T; A:T; a:T;}",
+    code: noFormat`type T = {$:T; _:T; A:T; a:T;}`,
     output: "type T = {A:T; _:T; $:T; a:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. '_' should be before '$'.",
@@ -1906,7 +1904,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {1:T; 2:T; '11':T; A:T;}",
+    code: noFormat`type T = {1:T; 2:T; '11':T; A:T;}`,
     output: "type T = {A:T; 2:T; '11':T; 1:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. '2' should be before '1'.",
@@ -1918,7 +1916,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`type T = {'#':T; À:T; 'Z':T; è:T;}`,
     output: "type T = {è:T; À:T; 'Z':T; '#':T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'À' should be before '#'.",
@@ -1933,7 +1931,7 @@ const invalid = [
    * desc, natural, insensitive, required
    */
   {
-    code: "type T = {_:T; a?:T; b:T;}",
+    code: noFormat`type T = {_:T; a?:T; b:T;}`,
     output: "type T = {b:T; a?:T; _:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive descending order. 'b' should be before 'a'.",
@@ -1946,7 +1944,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b:T; a?:T; _:T;}",
+    code: noFormat`type T = {b:T; a?:T; _:T;}`,
     output: "type T = {b:T; _:T; a?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive descending order. '_' should be before 'a'.",
@@ -1959,7 +1957,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b:T; b_:T; a?:T;}",
+    code: noFormat`type T = {b:T; b_:T; a?:T;}`,
     output: "type T = {b_:T; b:T; a?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive descending order. 'b_' should be before 'b'.",
@@ -1972,7 +1970,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {c:T; b_?:T; C:T;}",
+    code: noFormat`type T = {c:T; b_?:T; C:T;}`,
     output: "type T = {c:T; C:T; b_?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive descending order. 'C' should be before 'b_'.",
@@ -1985,7 +1983,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b_?:T; C:T; c:T;}",
+    code: noFormat`type T = {b_?:T; C:T; c:T;}`,
     output: "type T = {C:T; b_?:T; c:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive descending order. 'C' should be before 'b_'.",
@@ -1998,7 +1996,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {_:T; a?:T; $:T; A?:T;}",
+    code: noFormat`type T = {_:T; a?:T; $:T; A?:T;}`,
     output: "type T = {_:T; $:T; a?:T; A?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive descending order. '$' should be before 'a'.",
@@ -2011,7 +2009,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {2?:T; A:T; 1:T; '11':T;}",
+    code: noFormat`type T = {2?:T; A:T; 1:T; '11':T;}`,
     output: "type T = {A:T; 2?:T; 1:T; '11':T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive descending order. 'A' should be before '2'.",
@@ -2025,7 +2023,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {è:T; 'Z':T; '#'?:T; À?:T;}",
+    code: noFormat`type T = {è:T; 'Z':T; '#'?:T; À?:T;}`,
     output: "type T = {è:T; 'Z':T; À?:T; '#'?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive descending order. 'À' should be before '#'.",
@@ -2038,7 +2036,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {À?:T; 'Z':T; '#'?:T; è:T;}",
+    code: noFormat`type T = {À?:T; 'Z':T; '#'?:T; è:T;}`,
     output: "type T = {è:T; 'Z':T; '#'?:T; À?:T;}",
     errors: [
       "Expected type keys to be in required first natural insensitive descending order. 'Z' should be before 'À'.",
@@ -2056,7 +2054,7 @@ const invalid = [
    * desc, natural, insensitive, not-required
    */
   {
-    code: "type T = {_:T; a?:T; b:T;}",
+    code: noFormat`type T = {_:T; a?:T; b:T;}`,
     output: "type T = {b:T; a?:T; _:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'a' should be before '_'.",
@@ -2070,7 +2068,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {a?:T; b:T; _:T;}",
+    code: noFormat`type T = {a?:T; b:T; _:T;}`,
     output: "type T = {b:T; a?:T; _:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'b' should be before 'a'.",
@@ -2083,7 +2081,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b:T; b_:T; a?:T;}",
+    code: noFormat`type T = {b:T; b_:T; a?:T;}`,
     output: "type T = {b_:T; b:T; a?:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'b_' should be before 'b'.",
@@ -2096,7 +2094,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {c:T; b_?:T; C:T;}",
+    code: noFormat`type T = {c:T; b_?:T; C:T;}`,
     output: "type T = {c:T; C:T; b_?:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'C' should be before 'b_'.",
@@ -2109,7 +2107,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {b_?:T; C:T; c:T;}",
+    code: noFormat`type T = {b_?:T; C:T; c:T;}`,
     output: "type T = {C:T; b_?:T; c:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'C' should be before 'b_'.",
@@ -2122,7 +2120,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {_:T; a?:T; $:T; A?:T;}",
+    code: noFormat`type T = {_:T; a?:T; $:T; A?:T;}`,
     output: "type T = {a?:T; _:T; $:T; A?:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'a' should be before '_'.",
@@ -2136,7 +2134,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {2?:T; A:T; 1:T; '11':T;}",
+    code: noFormat`type T = {2?:T; A:T; 1:T; '11':T;}`,
     output: "type T = {A:T; 2?:T; 1:T; '11':T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'A' should be before '2'.",
@@ -2150,7 +2148,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {è:T; 'Z':T; '#'?:T; À?:T;}",
+    code: noFormat`type T = {è:T; 'Z':T; '#'?:T; À?:T;}`,
     output: "type T = {è:T; À?:T; '#'?:T; 'Z':T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'À' should be before '#'.",
@@ -2163,7 +2161,7 @@ const invalid = [
     ],
   },
   {
-    code: "type T = {À?:T; 'Z':T; '#'?:T; è:T;}",
+    code: noFormat`type T = {À?:T; 'Z':T; '#'?:T; è:T;}`,
     output: "type T = {è:T; 'Z':T; '#'?:T; À?:T;}",
     errors: [
       "Expected type keys to be in natural insensitive descending order. 'è' should be before '#'.",
@@ -2180,7 +2178,7 @@ const invalid = [
    * index signatures
    */
   {
-    code: "type T<T> { A: T; [skey: string]: T; _: T; }",
+    code: noFormat`type T<T> = { A: T; [skey: string]: T; _: T; }`,
     output: "type T<T> = { [skey: string]: T; A: T; _: T; }",
     errors: [
       "Expected type keys to be in ascending order. '[index: skey]' should be before 'A'.",
@@ -2188,7 +2186,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending]],
   },
   {
-    code: "type T<T> = { _: T; [skey: string]: T; A: T; }",
+    code: noFormat`type T<T> = { _: T; [skey: string]: T; A: T; }`,
     output: "type T<T> = { _: T; A: T; [skey: string]: T; }",
     errors: [
       "Expected type keys to be in descending order. 'A' should be before '[index: skey]'.",

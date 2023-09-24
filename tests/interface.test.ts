@@ -17,7 +17,7 @@ const valid = [
    * default, asc, caseSensitive
    */
   {
-    code: "interface U {_:T; a:T; b:T;}",
+    code: noFormat`interface U {_:T; a:T; b:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -31,7 +31,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {a:T; b:T; c:T;}",
+    code: noFormat`interface U {a:T; b:T; c:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -45,7 +45,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {a:T; b:T; b_:T;}",
+    code: noFormat`interface U {a:T; b:T; b_:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -59,7 +59,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {C:T; b_:T; c:T;}",
+    code: noFormat`interface U {C:T; b_:T; c:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -73,7 +73,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {$:T; A:T; _:T; a:T;}",
+    code: noFormat`interface U {$:T; A:T; _:T; a:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -87,7 +87,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {1:T; '11':T; 2:T; A:T;}",
+    code: noFormat`interface U {1:T; '11':T; 2:T; A:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -101,7 +101,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {'#':T; 'Z':T; À:T; è:T;}",
+    code: noFormat`interface U {'#':T; 'Z':T; À:T; è:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -137,7 +137,7 @@ const valid = [
    * nested
    */
   {
-    code: "interface U {a:T; b:{x:T; y:T;}; c:T;}",
+    code: noFormat`interface U {a:T; b:{x:T; y:T;}; c:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -151,7 +151,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {a:T; b:{x:T; y:T; z:{i:T; j:T;};}; c:T;}",
+    code: noFormat`interface U {a:T; b:{x:T; y:T; z:{i:T; j:T;};}; c:T;}`,
     optionsSet: [
       [],
       [SortingOrder.Ascending],
@@ -164,70 +164,40 @@ const valid = [
       ],
     ],
   },
-  //TODO: move to type test
-  //   {
-  //     code: "type U = {a:T; b:{x:T; y:T;}; c:T;}",
-  //     optionsSet: [
-  //       [],
-  //       [SortingOrder.Ascending],
-  //       [SortingOrder.Ascending, { caseSensitive: true }],
-  //       [SortingOrder.Ascending, { natural: false }],
-  //       [SortingOrder.Ascending, { caseSensitive: true, natural: false }],
-  //       [
-  //         SortingOrder.Ascending,
-  //         { caseSensitive: true, natural: false, requiredFirst: false },
-  //       ],
-  //     ],
-  //   },
-  //   {
-  //     code: "type U = {a:T; b:{x:T; y:T; z:{i:T; j:T;};}; c:T;}",
-  //     optionsSet: [
-  //       [],
-  //       [SortingOrder.Ascending],
-  //       [SortingOrder.Ascending, { caseSensitive: true }],
-  //       [SortingOrder.Ascending, { natural: false }],
-  //       [SortingOrder.Ascending, { caseSensitive: true, natural: false }],
-  //       [
-  //         SortingOrder.Ascending,
-  //         { caseSensitive: true, natural: false, requiredFirst: false },
-  //       ],
-  //     ],
-  //   },
-
   /**
    * asc, insensitive
    */
   {
-    code: "interface U {_:T; a:T; b:T;}",
+    code: noFormat`interface U {_:T; a:T; b:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {a:T; b:T; c:T;}",
+    code: noFormat`interface U {a:T; b:T; c:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {a:T; b:T; b_:T;}",
+    code: noFormat`interface U {a:T; b:T; b_:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {b_:T; C:T; c:T;}",
+    code: noFormat`interface U {b_:T; C:T; c:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {b_:T; c:T; C:T;}",
+    code: noFormat`interface U {b_:T; c:T; C:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {$:T; _:T; A:T; a:T;}",
+    code: noFormat`interface U {$:T; _:T; A:T; a:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {1:T; '11':T; 2:T; A:T;}",
+    code: noFormat`interface U {1:T; '11':T; 2:T; A:T;}`,
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
 
   {
-    code: "interface U {'#':T; 'Z':T; À:T; è:T;}",
+    code: noFormat`interface U {'#':T; 'Z':T; À:T; è:T;}`,
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
 
@@ -235,49 +205,49 @@ const valid = [
    * asc, natural, insensitive
    */
   {
-    code: "interface U {_:T; a:T; b:T;}",
+    code: noFormat`interface U {_:T; a:T; b:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {a:T; b:T; c:T;}",
+    code: noFormat`interface U {a:T; b:T; c:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {a:T; b:T; b_:T;}",
+    code: noFormat`interface U {a:T; b:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {b_:T; C:T; c:T;}",
+    code: noFormat`interface U {b_:T; C:T; c:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {b_:T; c:T; C:T;}",
+    code: noFormat`interface U {b_:T; c:T; C:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {$:T; _:T; A:T; a:T;}",
+    code: noFormat`interface U {$:T; _:T; A:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {1:T; 2:T; '11':T; A:T;}",
+    code: noFormat`interface U {1:T; 2:T; '11':T; A:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {'#':T; 'Z':T; À:T; è:T;}",
+    code: noFormat`interface U {'#':T; 'Z':T; À:T; è:T;}`,
     optionsSet: [
       [SortingOrder.Ascending, { natural: true, caseSensitive: false }],
     ],
@@ -287,7 +257,7 @@ const valid = [
    * asc, natural, insensitive, required
    */
   {
-    code: "interface U {_:T; b:T; a?:T;}",
+    code: noFormat`interface U {_:T; b:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -296,7 +266,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {a:T; c:T; b?:T;}",
+    code: noFormat`interface U {a:T; c:T; b?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -305,7 +275,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {b:T; b_:T; a?:T;}",
+    code: noFormat`interface U {b:T; b_:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -314,7 +284,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {C:T; c:T; b_?:T;}",
+    code: noFormat`interface U {C:T; c:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -323,7 +293,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {c:T; C:T; b_?:T;}",
+    code: noFormat`interface U {c:T; C:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -332,7 +302,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {$:T; _:T; A?:T; a?:T;}",
+    code: noFormat`interface U {$:T; _:T; A?:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -341,7 +311,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {1:T; '11':T; A:T; 2?:T;}",
+    code: noFormat`interface U {1:T; '11':T; A:T; 2?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -350,7 +320,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {'Z':T; À:T; è:T; '#'?:T;}",
+    code: noFormat`interface U {'Z':T; À:T; è:T; '#'?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -363,35 +333,35 @@ const valid = [
    * asc, required
    */
   {
-    code: "interface U {_:T; b:T; a?:T;}",
+    code: noFormat`interface U {_:T; b:T; a?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {a:T; c:T; b?:T;}",
+    code: noFormat`interface U {a:T; c:T; b?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {b:T; b_:T; a?:T;}",
+    code: noFormat`interface U {b:T; b_:T; a?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {C:T; c:T; b_?:T;}",
+    code: noFormat`interface U {C:T; c:T; b_?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {1:T; 11:T; 9:T; 111?:T;}",
+    code: noFormat`interface U {1:T; 11:T; 9:T; 111?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {$:T; _:T; A?:T; a?:T;}",
+    code: noFormat`interface U {$:T; _:T; A?:T; a?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {10:T; '11':T; 1?:T; 12?:T; 2?:T;}",
+    code: noFormat`interface U {10:T; '11':T; 1?:T; 12?:T; 2?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {'Z':T; À:T; è:T; '#'?:T;}",
+    code: noFormat`interface U {'Z':T; À:T; è:T; '#'?:T;}`,
     optionsSet: [[SortingOrder.Ascending, { requiredFirst: true }]],
   },
 
@@ -399,7 +369,7 @@ const valid = [
    * asc, natural, insensitive, not-required
    */
   {
-    code: "interface U {_:T; a?:T; b:T;}",
+    code: noFormat`interface U {_:T; a?:T; b:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -408,7 +378,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {a:T; b?:T; c:T;}",
+    code: noFormat`interface U {a:T; b?:T; c:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -417,7 +387,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {a?:T; b:T; b_:T;}",
+    code: noFormat`interface U {a?:T; b:T; b_:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -426,7 +396,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {b_?:T; C:T; c:T;}",
+    code: noFormat`interface U {b_?:T; C:T; c:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -435,7 +405,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {b_?:T; c:T; C:T;}",
+    code: noFormat`interface U {b_?:T; c:T; C:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -444,7 +414,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {$:T; _:T; A?:T; a?:T;}",
+    code: noFormat`interface U {$:T; _:T; A?:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -453,7 +423,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {1:T;  2?:T; '11':T; A:T;}",
+    code: noFormat`interface U {1:T;  2?:T; '11':T; A:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -462,7 +432,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {'#'?:T; 'Z':T; À:T; è:T;}",
+    code: noFormat`interface U {'#'?:T; 'Z':T; À:T; è:T;}`,
     optionsSet: [
       [
         SortingOrder.Ascending,
@@ -475,7 +445,7 @@ const valid = [
    * desc
    */
   {
-    code: "interface U {b:T; a:T; _:T;}",
+    code: noFormat`interface U {b:T; a:T; _:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -484,7 +454,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {c:T; b:T; a:T;}",
+    code: noFormat`interface U {c:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -493,7 +463,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {b_:T; b:T; a:T;}",
+    code: noFormat`interface U {b_:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -502,7 +472,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {c:T; b_:T; C:T;}",
+    code: noFormat`interface U {c:T; b_:T; C:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -511,7 +481,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {a:T; _:T; A:T; $:T;}",
+    code: noFormat`interface U {a:T; _:T; A:T; $:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -520,7 +490,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {A:T; 2:T; '11':T; 1:T;}",
+    code: noFormat`interface U {A:T; 2:T; '11':T; 1:T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -529,7 +499,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {è:T; À:T; 'Z':T; '#':T;}",
+    code: noFormat`interface U {è:T; À:T; 'Z':T; '#':T;}`,
     optionsSet: [
       [SortingOrder.Descending],
       [SortingOrder.Descending, { caseSensitive: true }],
@@ -542,56 +512,56 @@ const valid = [
    * desc, insensitive
    */
   {
-    code: "interface U {b:T; a:T; _:T;}",
+    code: noFormat`interface U {b:T; a:T; _:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "interface U {c:T; b:T; a:T;}",
+    code: noFormat`interface U {c:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "interface U {b_:T; b:T; a:T;}",
+    code: noFormat`interface U {b_:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "interface U {c:T; C:T; b_:T;}",
+    code: noFormat`interface U {c:T; C:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "interface U {C:T; c:T; b_:T;}",
+    code: noFormat`interface U {C:T; c:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "interface U {a:T; A:T; _:T; $:T;}",
+    code: noFormat`interface U {a:T; A:T; _:T; $:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "interface U {A:T; 2:T; '11':T; 1:T;}",
+    code: noFormat`interface U {A:T; 2:T; '11':T; 1:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
     ],
   },
   {
-    code: "interface U {è:T; À:T; 'Z':T; '#':T;}",
+    code: noFormat`interface U {è:T; À:T; 'Z':T; '#':T;}`,
     optionsSet: [
       [SortingOrder.Descending, { caseSensitive: false }],
       [SortingOrder.Descending, { caseSensitive: false, natural: false }],
@@ -602,49 +572,49 @@ const valid = [
    * desc, natural
    */
   {
-    code: "interface U {b:T; a:T; _:T;}",
+    code: noFormat`interface U {b:T; a:T; _:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "interface U {c:T; b:T; a:T;}",
+    code: noFormat`interface U {c:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "interface U {b_:T; b:T; a:T;}",
+    code: noFormat`interface U {b_:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "interface U {c:T; b_:T; C:T;}",
+    code: noFormat`interface U {c:T; b_:T; C:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "interface U {a:T; A:T; _:T; $:T;}",
+    code: noFormat`interface U {a:T; A:T; _:T; $:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "interface U {A:T; '11':T; 2:T; 1:T;}",
+    code: noFormat`interface U {A:T; '11':T; 2:T; 1:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
     ],
   },
   {
-    code: "interface U {è:T; À:T; 'Z':T; '#':T;}",
+    code: noFormat`interface U {è:T; À:T; 'Z':T; '#':T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true }],
       [SortingOrder.Descending, { natural: true, caseSensitive: true }],
@@ -655,49 +625,49 @@ const valid = [
    * desc, natural, insensitive
    */
   {
-    code: "interface U {b:T; a:T; _:T;}",
+    code: noFormat`interface U {b:T; a:T; _:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {c:T; b:T; a:T;}",
+    code: noFormat`interface U {c:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {b_:T; b:T; a:T;}",
+    code: noFormat`interface U {b_:T; b:T; a:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {c:T; C:T; b_:T;}",
+    code: noFormat`interface U {c:T; C:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {C:T; c:T; b_:T;}",
+    code: noFormat`interface U {C:T; c:T; b_:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {a:T; A:T; _:T; $:T;}",
+    code: noFormat`interface U {a:T; A:T; _:T; $:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {A:T; '11':T; 2:T; 1:T;}",
+    code: noFormat`interface U {A:T; '11':T; 2:T; 1:T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
   },
   {
-    code: "interface U {è:T; À:T; 'Z':T; '#':T;}",
+    code: noFormat`interface U {è:T; À:T; 'Z':T; '#':T;}`,
     optionsSet: [
       [SortingOrder.Descending, { natural: true, caseSensitive: false }],
     ],
@@ -707,7 +677,7 @@ const valid = [
    * desc, natural, insensitive, required
    */
   {
-    code: "interface U {b:T; _:T; a?:T;}",
+    code: noFormat`interface U {b:T; _:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -716,7 +686,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {c:T; a:T; b?:T;}",
+    code: noFormat`interface U {c:T; a:T; b?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -725,7 +695,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {b_:T; b:T; a?:T;}",
+    code: noFormat`interface U {b_:T; b:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -734,7 +704,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {c:T; C:T; b_?:T;}",
+    code: noFormat`interface U {c:T; C:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -743,7 +713,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {C:T; c:T; b_?:T;}",
+    code: noFormat`interface U {C:T; c:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -752,7 +722,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {_:T; $:T; a?:T; A?:T;}",
+    code: noFormat`interface U {_:T; $:T; a?:T; A?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -761,7 +731,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U { A:T; '11':T; 1:T; 2?:T;}",
+    code: noFormat`interface U { A:T; '11':T; 1:T; 2?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -770,7 +740,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {è:T; 'Z':T; À?:T; '#'?:T;}",
+    code: noFormat`interface U {è:T; 'Z':T; À?:T; '#'?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -783,35 +753,35 @@ const valid = [
    * desc, required
    */
   {
-    code: "interface U {b:T; _:T; a?:T;}",
+    code: noFormat`interface U {b:T; _:T; a?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {c:T; a:T; b?:T;}",
+    code: noFormat`interface U {c:T; a:T; b?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {b_:T; b:T; a?:T;}",
+    code: noFormat`interface U {b_:T; b:T; a?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {c:T; C:T; b_?:T;}",
+    code: noFormat`interface U {c:T; C:T; b_?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {9:T; 11:T; 1:T; 111?:T;}",
+    code: noFormat`interface U {9:T; 11:T; 1:T; 111?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {_:T; $:T; a?:T; A?:T;}",
+    code: noFormat`interface U {_:T; $:T; a?:T; A?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {'11':T; 10:T; 2?:T; 12?:T; 1?:T;}",
+    code: noFormat`interface U {'11':T; 10:T; 2?:T; 12?:T; 1?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
   {
-    code: "interface U {è:T; À:T; 'Z':T; '#'?:T;}",
+    code: noFormat`interface U {è:T; À:T; 'Z':T; '#'?:T;}`,
     optionsSet: [[SortingOrder.Descending, { requiredFirst: true }]],
   },
 
@@ -819,7 +789,7 @@ const valid = [
    * desc, natural, insensitive, not-required
    */
   {
-    code: "interface U {b:T; a?:T; _:T;}",
+    code: noFormat`interface U {b:T; a?:T; _:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -828,7 +798,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {c:T; b?:T; a:T;}",
+    code: noFormat`interface U {c:T; b?:T; a:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -837,7 +807,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {b_:T; b:T; a?:T;}",
+    code: noFormat`interface U {b_:T; b:T; a?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -846,7 +816,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {c:T; C:T; b_?:T;}",
+    code: noFormat`interface U {c:T; C:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -855,7 +825,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {C:T; c:T; b_?:T;}",
+    code: noFormat`interface U {C:T; c:T; b_?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -864,7 +834,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {a?:T; A?:T; _:T; $:T;}",
+    code: noFormat`interface U {a?:T; A?:T; _:T; $:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -873,7 +843,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {A:T; '11':T; 2?:T; 1:T;}",
+    code: noFormat`interface U {A:T; '11':T; 2?:T; 1:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -882,7 +852,7 @@ const valid = [
     ],
   },
   {
-    code: "interface U {è:T; À:T; 'Z':T; '#'?:T;}",
+    code: noFormat`interface U {è:T; À:T; 'Z':T; '#'?:T;}`,
     optionsSet: [
       [
         SortingOrder.Descending,
@@ -909,7 +879,7 @@ const invalid = [
    * default (asc)
    */
   {
-    code: "interface U {a:T; _:T; b:T;}",
+    code: noFormat`interface U {a:T; _:T; b:T;}`,
     output: "interface U {_:T; a:T; b:T;}",
     errors: [
       "Expected interface keys to be in ascending order. '_' should be before 'a'.",
@@ -927,7 +897,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {a:T; c:T; b:T;}",
+    code: noFormat`interface U {a:T; c:T; b:T;}`,
     output: "interface U {a:T; b:T; c:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'b' should be before 'c'.",
@@ -945,7 +915,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b_:T; a:T; b:T;}",
+    code: noFormat`interface U {b_:T; a:T; b:T;}`,
     output: "interface U {a:T; b_:T; b:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'a' should be before 'b_'.",
@@ -963,7 +933,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b_:T; c:T; C:T;}",
+    code: noFormat`interface U {b_:T; c:T; C:T;}`,
     output: "interface U {C:T; c:T; b_:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'C' should be before 'c'.",
@@ -981,7 +951,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {$:T; _:T; A:T; a:T;}",
+    code: noFormat`interface U {$:T; _:T; A:T; a:T;}`,
     output: "interface U {$:T; A:T; _:T; a:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'A' should be before '_'.",
@@ -999,7 +969,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`interface U {1:T; 2:T; A:T; '11':T;}`,
     output: "interface U {1:T; '11':T; A:T; 2:T;}",
     errors: [
       "Expected interface keys to be in ascending order. '11' should be before 'A'.",
@@ -1017,7 +987,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#':T; À:T; 'Z':T; è:T;}`,
     output: "interface U {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'Z' should be before 'À'.",
@@ -1039,7 +1009,7 @@ const invalid = [
    * methods
    */
   {
-    code: "interface U {1:T; 2:T; A():T; '11':T;}",
+    code: noFormat`interface U {1:T; 2:T; A():T; '11':T;}`,
     output: "interface U {1:T; '11':T; A():T; 2:T;}",
     errors: [
       "Expected interface keys to be in ascending order. '11' should be before 'A'.",
@@ -1057,7 +1027,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {'#'():T; À():T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#'():T; À():T; 'Z':T; è:T;}`,
     output: "interface U {'#'():T; 'Z':T; À():T; è:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'Z' should be before 'À'.",
@@ -1122,32 +1092,12 @@ const invalid = [
       ],
     ],
   },
-  // TODO: Move to type
-  //   {
-  //     code: "type U = {a:T; c:{y:T; x:T;}, b:T;}",
-  //     output: "type U = {a:T; b:T; c:{y:T; x:T;}}",
-  //     errors: [
-  //       "Expected interface keys to be in ascending order. 'x' should be before 'y'.",
-  //       "Expected interface keys to be in ascending order. 'b' should be before 'c'.",
-  //     ],
-  //     optionsSet: [
-  //       [],
-  //       [SortingOrder.Ascending],
-  //       [SortingOrder.Ascending, { caseSensitive: true }],
-  //       [SortingOrder.Ascending, { natural: false }],
-  //       [SortingOrder.Ascending, { caseSensitive: true, natural: false }],
-  //       [
-  //         SortingOrder.Ascending,
-  //         { caseSensitive: true, natural: false, requiredFirst: false },
-  //       ],
-  //     ],
-  //   },
 
   /**
    * asc
    */
   {
-    code: "interface U {a:T; _:T; b:T;}",
+    code: noFormat`interface U {a:T; _:T; b:T;}`,
     output: "interface U {_:T; a:T; b:T;}",
     errors: [
       "Expected interface keys to be in ascending order. '_' should be before 'a'.",
@@ -1165,7 +1115,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {a:T; c:T; b:T;}",
+    code: noFormat`interface U {a:T; c:T; b:T;}`,
     output: "interface U {a:T; b:T; c:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'b' should be before 'c'.",
@@ -1183,7 +1133,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b_:T; a:T; b:T;}",
+    code: noFormat`interface U {b_:T; a:T; b:T;}`,
     output: "interface U {a:T; b_:T; b:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'a' should be before 'b_'.",
@@ -1201,7 +1151,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b_:T; c:T; C:T;}",
+    code: noFormat`interface U {b_:T; c:T; C:T;}`,
     output: "interface U {C:T; c:T; b_:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'C' should be before 'c'.",
@@ -1219,7 +1169,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {$:T; _:T; A:T; a:T;}",
+    code: noFormat`interface U {$:T; _:T; A:T; a:T;}`,
     output: "interface U {$:T; A:T; _:T; a:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'A' should be before '_'.",
@@ -1237,7 +1187,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`interface U {1:T; 2:T; A:T; '11':T;}`,
     output: "interface U {1:T; '11':T; A:T; 2:T;}",
     errors: [
       "Expected interface keys to be in ascending order. '11' should be before 'A'.",
@@ -1255,7 +1205,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#':T; À:T; 'Z':T; è:T;}`,
     output: "interface U {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected interface keys to be in ascending order. 'Z' should be before 'À'.",
@@ -1273,7 +1223,7 @@ const invalid = [
    * asc, insensitive
    */
   {
-    code: "interface U {a:T; _:T; b:T;}",
+    code: noFormat`interface U {a:T; _:T; b:T;}`,
     output: "interface U {_:T; a:T; b:T;}",
     errors: [
       "Expected interface keys to be in insensitive ascending order. '_' should be before 'a'.",
@@ -1281,7 +1231,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {a:T; c:T; b:T;}",
+    code: noFormat`interface U {a:T; c:T; b:T;}`,
     output: "interface U {a:T; b:T; c:T;}",
     errors: [
       "Expected interface keys to be in insensitive ascending order. 'b' should be before 'c'.",
@@ -1289,7 +1239,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {b_:T; a:T; b:T;}",
+    code: noFormat`interface U {b_:T; a:T; b:T;}`,
     output: "interface U {a:T; b_:T; b:T;}",
     errors: [
       "Expected interface keys to be in insensitive ascending order. 'a' should be before 'b_'.",
@@ -1297,7 +1247,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {$:T; A:T; _:T; a:T;}",
+    code: noFormat`interface U {$:T; A:T; _:T; a:T;}`,
     output: "interface U {$:T; _:T; A:T; a:T;}",
     errors: [
       "Expected interface keys to be in insensitive ascending order. '_' should be before 'A'.",
@@ -1305,7 +1255,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`interface U {1:T; 2:T; A:T; '11':T;}`,
     output: "interface U {1:T; '11':T; A:T; 2:T;}",
     errors: [
       "Expected interface keys to be in insensitive ascending order. '11' should be before 'A'.",
@@ -1313,7 +1263,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#':T; À:T; 'Z':T; è:T;}`,
     output: "interface U {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected interface keys to be in insensitive ascending order. 'Z' should be before 'À'.",
@@ -1325,7 +1275,7 @@ const invalid = [
    * asc, natural
    */
   {
-    code: "interface U {a:T; _:T; b:T;}",
+    code: noFormat`interface U {a:T; _:T; b:T;}`,
     output: "interface U {_:T; a:T; b:T;}",
     errors: [
       "Expected interface keys to be in natural ascending order. '_' should be before 'a'.",
@@ -1333,7 +1283,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "interface U {a:T; c:T; b:T;}",
+    code: noFormat`interface U {a:T; c:T; b:T;}`,
     output: "interface U {a:T; b:T; c:T;}",
     errors: [
       "Expected interface keys to be in natural ascending order. 'b' should be before 'c'.",
@@ -1341,7 +1291,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "interface U {b_:T; a:T; b:T;}",
+    code: noFormat`interface U {b_:T; a:T; b:T;}`,
     output: "interface U {a:T; b_:T; b:T;}",
     errors: [
       "Expected interface keys to be in natural ascending order. 'a' should be before 'b_'.",
@@ -1349,7 +1299,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "interface U {b_:T; c:T; C:T;}",
+    code: noFormat`interface U {b_:T; c:T; C:T;}`,
     output: "interface U {C:T; c:T; b_:T;}",
     errors: [
       "Expected interface keys to be in natural ascending order. 'C' should be before 'c'.",
@@ -1357,7 +1307,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "interface U {$:T; A:T; _:T; a:T;}",
+    code: noFormat`interface U {$:T; A:T; _:T; a:T;}`,
     output: "interface U {$:T; _:T; A:T; a:T;}",
     errors: [
       "Expected interface keys to be in natural ascending order. '_' should be before 'A'.",
@@ -1365,7 +1315,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "interface U {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`interface U {1:T; 2:T; A:T; '11':T;}`,
     output: "interface U {1:T; 2:T; '11':T; A:T;}",
     errors: [
       "Expected interface keys to be in natural ascending order. '11' should be before 'A'.",
@@ -1373,7 +1323,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending, { natural: true }]],
   },
   {
-    code: "interface U {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#':T; À:T; 'Z':T; è:T;}`,
     output: "interface U {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected interface keys to be in natural ascending order. 'Z' should be before 'À'.",
@@ -1385,7 +1335,7 @@ const invalid = [
    * asc, natural, insensitive
    */
   {
-    code: "interface U {a:T; _:T; b:T;}",
+    code: noFormat`interface U {a:T; _:T; b:T;}`,
     output: "interface U {_:T; a:T; b:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. '_' should be before 'a'.",
@@ -1395,7 +1345,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {a:T; c:T; b:T;}",
+    code: noFormat`interface U {a:T; c:T; b:T;}`,
     output: "interface U {a:T; b:T; c:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. 'b' should be before 'c'.",
@@ -1405,7 +1355,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b_:T; a:T; b:T;}",
+    code: noFormat`interface U {b_:T; a:T; b:T;}`,
     output: "interface U {a:T; b_:T; b:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. 'a' should be before 'b_'.",
@@ -1415,7 +1365,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {$:T; A:T; _:T; a:T;}",
+    code: noFormat`interface U {$:T; A:T; _:T; a:T;}`,
     output: "interface U {$:T; _:T; A:T; a:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. '_' should be before 'A'.",
@@ -1425,7 +1375,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {1:T; '11':T; 2:T; A:T;}",
+    code: noFormat`interface U {1:T; '11':T; 2:T; A:T;}`,
     output: "interface U {1:T; 2:T; '11':T; A:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. '2' should be before '11'.",
@@ -1435,7 +1385,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#':T; À:T; 'Z':T; è:T;}`,
     output: "interface U {'#':T; 'Z':T; À:T; è:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. 'Z' should be before 'À'.",
@@ -1449,7 +1399,7 @@ const invalid = [
    * asc, natural, insensitive, required
    */
   {
-    code: "interface U {_:T; a?:T; b:T;}",
+    code: noFormat`interface U {_:T; a?:T; b:T;}`,
     output: "interface U {_:T; b:T; a?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive ascending order. 'b' should be before 'a'.",
@@ -1462,7 +1412,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {a:T; b?:T; c:T;}",
+    code: noFormat`interface U {a:T; b?:T; c:T;}`,
     output: "interface U {a:T; c:T; b?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive ascending order. 'c' should be before 'b'.",
@@ -1475,7 +1425,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b:T; a?:T; b_:T;}",
+    code: noFormat`interface U {b:T; a?:T; b_:T;}`,
     output: "interface U {b:T; b_:T; a?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive ascending order. 'b_' should be before 'a'.",
@@ -1488,7 +1438,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {C:T; b_?:T; c:T;}",
+    code: noFormat`interface U {C:T; b_?:T; c:T;}`,
     output: "interface U {C:T; c:T; b_?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive ascending order. 'c' should be before 'b_'.",
@@ -1501,7 +1451,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {C:T; b_?:T; c:T;}",
+    code: noFormat`interface U {C:T; b_?:T; c:T;}`,
     output: "interface U {C:T; c:T; b_?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive ascending order. 'c' should be before 'b_'.",
@@ -1514,7 +1464,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {$:T; A?:T; _:T; a?:T;}",
+    code: noFormat`interface U {$:T; A?:T; _:T; a?:T;}`,
     output: "interface U {$:T; _:T; A?:T; a?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive ascending order. '_' should be before 'A'.",
@@ -1527,7 +1477,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {1:T; '11':T; 2?:T; A:T;}",
+    code: noFormat`interface U {1:T; '11':T; 2?:T; A:T;}`,
     output: "interface U {1:T; '11':T; A:T; 2?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive ascending order. 'A' should be before '2'.",
@@ -1540,7 +1490,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {'Z':T; À:T; '#'?:T; è:T;}",
+    code: noFormat`interface U {'Z':T; À:T; '#'?:T; è:T;}`,
     output: "interface U {'Z':T; À:T; è:T; '#'?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive ascending order. 'è' should be before '#'.",
@@ -1557,7 +1507,7 @@ const invalid = [
    * asc, natural, insensitive, not-required
    */
   {
-    code: "interface U {_:T; b:T; a?:T;}",
+    code: noFormat`interface U {_:T; b:T; a?:T;}`,
     output: "interface U {_:T; a?:T; b:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. 'a' should be before 'b'.",
@@ -1570,7 +1520,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b?:T; a:T; c:T;}",
+    code: noFormat`interface U {b?:T; a:T; c:T;}`,
     output: "interface U {a:T; b?:T; c:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. 'a' should be before 'b'.",
@@ -1583,7 +1533,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b:T; a?:T; b_:T;}",
+    code: noFormat`interface U {b:T; a?:T; b_:T;}`,
     output: "interface U {a?:T; b:T; b_:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. 'a' should be before 'b'.",
@@ -1596,7 +1546,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {C:T; c:T; b_?:T;}",
+    code: noFormat`interface U {C:T; c:T; b_?:T;}`,
     output: "interface U {b_?:T; c:T; C:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. 'b_' should be before 'c'.",
@@ -1609,7 +1559,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {C:T; b_?:T; c:T;}",
+    code: noFormat`interface U {C:T; b_?:T; c:T;}`,
     output: "interface U {b_?:T; C:T; c:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. 'b_' should be before 'C'.",
@@ -1622,7 +1572,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {$:T; A?:T; _:T; a?:T;}",
+    code: noFormat`interface U {$:T; A?:T; _:T; a?:T;}`,
     output: "interface U {$:T; _:T; A?:T; a?:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. '_' should be before 'A'.",
@@ -1635,7 +1585,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {1:T; '11':T; 2?:T; A:T;}",
+    code: noFormat`interface U {1:T; '11':T; 2?:T; A:T;}`,
     output: "interface U {1:T; 2?:T; '11':T; A:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. '2' should be before '11'.",
@@ -1648,7 +1598,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {'Z':T; À:T; '#'?:T; è:T;}",
+    code: noFormat`interface U {'Z':T; À:T; '#'?:T; è:T;}`,
     output: "interface U {'#'?:T; À:T; 'Z':T; è:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive ascending order. '#' should be before 'À'.",
@@ -1665,7 +1615,7 @@ const invalid = [
    * desc
    */
   {
-    code: "interface U {a:T; _:T; b:T;}",
+    code: noFormat`interface U {a:T; _:T; b:T;}`,
     output: "interface U {b:T; _:T; a:T;}",
     errors: [
       "Expected interface keys to be in descending order. 'b' should be before '_'.",
@@ -1673,7 +1623,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "interface U {a:T; c:T; b:T;}",
+    code: noFormat`interface U {a:T; c:T; b:T;}`,
     output: "interface U {c:T; a:T; b:T;}",
     errors: [
       "Expected interface keys to be in descending order. 'c' should be before 'a'.",
@@ -1681,7 +1631,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "interface U {b_:T; a:T; b:T;}",
+    code: noFormat`interface U {b_:T; a:T; b:T;}`,
     output: "interface U {b_:T; b:T; a:T;}",
     errors: [
       "Expected interface keys to be in descending order. 'b' should be before 'a'.",
@@ -1689,7 +1639,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "interface U {b_:T; c:T; C:T;}",
+    code: noFormat`interface U {b_:T; c:T; C:T;}`,
     output: "interface U {c:T; b_:T; C:T;}",
     errors: [
       "Expected interface keys to be in descending order. 'c' should be before 'b_'.",
@@ -1697,7 +1647,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "interface U {$:T; _:T; A:T; a:T;}",
+    code: noFormat`interface U {$:T; _:T; A:T; a:T;}`,
     output: "interface U {a:T; _:T; A:T; $:T;}",
     errors: [
       "Expected interface keys to be in descending order. '_' should be before '$'.",
@@ -1706,7 +1656,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "interface U {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`interface U {1:T; 2:T; A:T; '11':T;}`,
     output: "interface U {A:T; 2:T; 1:T; '11':T;}",
     errors: [
       "Expected interface keys to be in descending order. '2' should be before '1'.",
@@ -1715,7 +1665,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending]],
   },
   {
-    code: "interface U {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#':T; À:T; 'Z':T; è:T;}`,
     output: "interface U {è:T; À:T; 'Z':T; '#':T;}",
     errors: [
       "Expected interface keys to be in descending order. 'À' should be before '#'.",
@@ -1728,7 +1678,7 @@ const invalid = [
    * desc, insensitive
    */
   {
-    code: "interface U {a:T; _:T; b:T;}",
+    code: noFormat`interface U {a:T; _:T; b:T;}`,
     output: "interface U {b:T; _:T; a:T;}",
     errors: [
       "Expected interface keys to be in insensitive descending order. 'b' should be before '_'.",
@@ -1736,7 +1686,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {a:T; c:T; b:T;}",
+    code: noFormat`interface U {a:T; c:T; b:T;}`,
     output: "interface U {c:T; a:T; b:T;}",
     errors: [
       "Expected interface keys to be in insensitive descending order. 'c' should be before 'a'.",
@@ -1744,7 +1694,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {b_:T; a:T; b:T;}",
+    code: noFormat`interface U {b_:T; a:T; b:T;}`,
     output: "interface U {b_:T; b:T; a:T;}",
     errors: [
       "Expected interface keys to be in insensitive descending order. 'b' should be before 'a'.",
@@ -1752,7 +1702,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {b_:T; c:T; C:T;}",
+    code: noFormat`interface U {b_:T; c:T; C:T;}`,
     output: "interface U {c:T; b_:T; C:T;}",
     errors: [
       "Expected interface keys to be in insensitive descending order. 'c' should be before 'b_'.",
@@ -1760,7 +1710,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {$:T; _:T; A:T; a:T;}",
+    code: noFormat`interface U {$:T; _:T; A:T; a:T;}`,
     output: "interface U {A:T; _:T; $:T; a:T;}",
     errors: [
       "Expected interface keys to be in insensitive descending order. '_' should be before '$'.",
@@ -1769,7 +1719,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`interface U {1:T; 2:T; A:T; '11':T;}`,
     output: "interface U {A:T; 2:T; 1:T; '11':T;}",
     errors: [
       "Expected interface keys to be in insensitive descending order. '2' should be before '1'.",
@@ -1778,7 +1728,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { caseSensitive: false }]],
   },
   {
-    code: "interface U {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#':T; À:T; 'Z':T; è:T;}`,
     output: "interface U {è:T; À:T; 'Z':T; '#':T;}",
     errors: [
       "Expected interface keys to be in insensitive descending order. 'À' should be before '#'.",
@@ -1791,7 +1741,7 @@ const invalid = [
    * desc, natural
    */
   {
-    code: "interface U {a:T; _:T; b:T;}",
+    code: noFormat`interface U {a:T; _:T; b:T;}`,
     output: "interface U {b:T; _:T; a:T;}",
     errors: [
       "Expected interface keys to be in natural descending order. 'b' should be before '_'.",
@@ -1799,7 +1749,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "interface U {a:T; c:T; b:T;}",
+    code: noFormat`interface U {a:T; c:T; b:T;}`,
     output: "interface U {c:T; a:T; b:T;}",
     errors: [
       "Expected interface keys to be in natural descending order. 'c' should be before 'a'.",
@@ -1807,7 +1757,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "interface U {b_:T; a:T; b:T;}",
+    code: noFormat`interface U {b_:T; a:T; b:T;}`,
     output: "interface U {b_:T; b:T; a:T;}",
     errors: [
       "Expected interface keys to be in natural descending order. 'b' should be before 'a'.",
@@ -1815,7 +1765,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "interface U {b_:T; c:T; C:T;}",
+    code: noFormat`interface U {b_:T; c:T; C:T;}`,
     output: "interface U {c:T; b_:T; C:T;}",
     errors: [
       "Expected interface keys to be in natural descending order. 'c' should be before 'b_'.",
@@ -1823,7 +1773,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "interface U {$:T; _:T; A:T; a:T;}",
+    code: noFormat`interface U {$:T; _:T; A:T; a:T;}`,
     output: "interface U {a:T; _:T; A:T; $:T;}",
     errors: [
       "Expected interface keys to be in natural descending order. '_' should be before '$'.",
@@ -1833,7 +1783,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "interface U {1:T; 2:T; A:T; '11':T;}",
+    code: noFormat`interface U {1:T; 2:T; A:T; '11':T;}`,
     output: "interface U {A:T; 2:T; 1:T; '11':T;}",
     errors: [
       "Expected interface keys to be in natural descending order. '2' should be before '1'.",
@@ -1842,7 +1792,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Descending, { natural: true }]],
   },
   {
-    code: "interface U {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#':T; À:T; 'Z':T; è:T;}`,
     output: "interface U {è:T; À:T; 'Z':T; '#':T;}",
     errors: [
       "Expected interface keys to be in natural descending order. 'À' should be before '#'.",
@@ -1855,7 +1805,7 @@ const invalid = [
    * desc, natural, insensitive
    */
   {
-    code: "interface U {a:T; _:T; b:T;}",
+    code: noFormat`interface U {a:T; _:T; b:T;}`,
     output: "interface U {b:T; _:T; a:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'b' should be before '_'.",
@@ -1865,7 +1815,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {a:T; c:T; b:T;}",
+    code: noFormat`interface U {a:T; c:T; b:T;}`,
     output: "interface U {c:T; a:T; b:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'c' should be before 'a'.",
@@ -1875,7 +1825,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b_:T; a:T; b:T;}",
+    code: noFormat`interface U {b_:T; a:T; b:T;}`,
     output: "interface U {b_:T; b:T; a:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'b' should be before 'a'.",
@@ -1885,7 +1835,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b_:T; c:T; C:T;}",
+    code: noFormat`interface U {b_:T; c:T; C:T;}`,
     output: "interface U {c:T; b_:T; C:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'c' should be before 'b_'.",
@@ -1895,7 +1845,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {$:T; _:T; A:T; a:T;}",
+    code: noFormat`interface U {$:T; _:T; A:T; a:T;}`,
     output: "interface U {A:T; _:T; $:T; a:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. '_' should be before '$'.",
@@ -1906,7 +1856,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {1:T; 2:T; '11':T; A:T;}",
+    code: noFormat`interface U {1:T; 2:T; '11':T; A:T;}`,
     output: "interface U {A:T; 2:T; '11':T; 1:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. '2' should be before '1'.",
@@ -1918,7 +1868,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {'#':T; À:T; 'Z':T; è:T;}",
+    code: noFormat`interface U {'#':T; À:T; 'Z':T; è:T;}`,
     output: "interface U {è:T; À:T; 'Z':T; '#':T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'À' should be before '#'.",
@@ -1933,7 +1883,7 @@ const invalid = [
    * desc, natural, insensitive, required
    */
   {
-    code: "interface U {_:T; a?:T; b:T;}",
+    code: noFormat`interface U {_:T; a?:T; b:T;}`,
     output: "interface U {b:T; a?:T; _:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive descending order. 'b' should be before 'a'.",
@@ -1946,7 +1896,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b:T; a?:T; _:T;}",
+    code: noFormat`interface U {b:T; a?:T; _:T;}`,
     output: "interface U {b:T; _:T; a?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive descending order. '_' should be before 'a'.",
@@ -1959,7 +1909,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b:T; b_:T; a?:T;}",
+    code: noFormat`interface U {b:T; b_:T; a?:T;}`,
     output: "interface U {b_:T; b:T; a?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive descending order. 'b_' should be before 'b'.",
@@ -1972,7 +1922,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {c:T; b_?:T; C:T;}",
+    code: noFormat`interface U {c:T; b_?:T; C:T;}`,
     output: "interface U {c:T; C:T; b_?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive descending order. 'C' should be before 'b_'.",
@@ -1985,7 +1935,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b_?:T; C:T; c:T;}",
+    code: noFormat`interface U {b_?:T; C:T; c:T;}`,
     output: "interface U {C:T; b_?:T; c:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive descending order. 'C' should be before 'b_'.",
@@ -1998,7 +1948,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {_:T; a?:T; $:T; A?:T;}",
+    code: noFormat`interface U {_:T; a?:T; $:T; A?:T;}`,
     output: "interface U {_:T; $:T; a?:T; A?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive descending order. '$' should be before 'a'.",
@@ -2011,7 +1961,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {2?:T; A:T; 1:T; '11':T;}",
+    code: noFormat`interface U {2?:T; A:T; 1:T; '11':T;}`,
     output: "interface U {A:T; 2?:T; 1:T; '11':T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive descending order. 'A' should be before '2'.",
@@ -2025,7 +1975,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {è:T; 'Z':T; '#'?:T; À?:T;}",
+    code: noFormat`interface U {è:T; 'Z':T; '#'?:T; À?:T;}`,
     output: "interface U {è:T; 'Z':T; À?:T; '#'?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive descending order. 'À' should be before '#'.",
@@ -2038,7 +1988,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {À?:T; 'Z':T; '#'?:T; è:T;}",
+    code: noFormat`interface U {À?:T; 'Z':T; '#'?:T; è:T;}`,
     output: "interface U {è:T; 'Z':T; '#'?:T; À?:T;}",
     errors: [
       "Expected interface keys to be in required first natural insensitive descending order. 'Z' should be before 'À'.",
@@ -2056,7 +2006,7 @@ const invalid = [
    * desc, natural, insensitive, not-required
    */
   {
-    code: "interface U {_:T; a?:T; b:T;}",
+    code: noFormat`interface U {_:T; a?:T; b:T;}`,
     output: "interface U {b:T; a?:T; _:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'a' should be before '_'.",
@@ -2070,7 +2020,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {a?:T; b:T; _:T;}",
+    code: noFormat`interface U {a?:T; b:T; _:T;}`,
     output: "interface U {b:T; a?:T; _:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'b' should be before 'a'.",
@@ -2083,7 +2033,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b:T; b_:T; a?:T;}",
+    code: noFormat`interface U {b:T; b_:T; a?:T;}`,
     output: "interface U {b_:T; b:T; a?:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'b_' should be before 'b'.",
@@ -2096,7 +2046,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {c:T; b_?:T; C:T;}",
+    code: noFormat`interface U {c:T; b_?:T; C:T;}`,
     output: "interface U {c:T; C:T; b_?:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'C' should be before 'b_'.",
@@ -2109,7 +2059,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {b_?:T; C:T; c:T;}",
+    code: noFormat`interface U {b_?:T; C:T; c:T;}`,
     output: "interface U {C:T; b_?:T; c:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'C' should be before 'b_'.",
@@ -2122,7 +2072,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {_:T; a?:T; $:T; A?:T;}",
+    code: noFormat`interface U {_:T; a?:T; $:T; A?:T;}`,
     output: "interface U {a?:T; _:T; $:T; A?:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'a' should be before '_'.",
@@ -2136,7 +2086,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {2?:T; A:T; 1:T; '11':T;}",
+    code: noFormat`interface U {2?:T; A:T; 1:T; '11':T;}`,
     output: "interface U {A:T; 2?:T; 1:T; '11':T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'A' should be before '2'.",
@@ -2150,7 +2100,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {è:T; 'Z':T; '#'?:T; À?:T;}",
+    code: noFormat`interface U {è:T; 'Z':T; '#'?:T; À?:T;}`,
     output: "interface U {è:T; À?:T; '#'?:T; 'Z':T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'À' should be before '#'.",
@@ -2163,7 +2113,7 @@ const invalid = [
     ],
   },
   {
-    code: "interface U {À?:T; 'Z':T; '#'?:T; è:T;}",
+    code: noFormat`interface U {À?:T; 'Z':T; '#'?:T; è:T;}`,
     output: "interface U {è:T; 'Z':T; '#'?:T; À?:T;}",
     errors: [
       "Expected interface keys to be in natural insensitive descending order. 'è' should be before '#'.",
@@ -2180,7 +2130,7 @@ const invalid = [
    * index signatures
    */
   {
-    code: "interface U<T> { A: T; [skey: string]: T; _: T; }",
+    code: noFormat`interface U<T> { A: T; [skey: string]: T; _: T; }`,
     output: "interface U<T> { [skey: string]: T; A: T; _: T; }",
     errors: [
       "Expected interface keys to be in ascending order. '[index: skey]' should be before 'A'.",
@@ -2188,7 +2138,7 @@ const invalid = [
     optionsSet: [[SortingOrder.Ascending]],
   },
   {
-    code: "interface U<T> { _: T; [skey: string]: T; A: T; }",
+    code: noFormat`interface U<T> { _: T; [skey: string]: T; A: T; }`,
     output: "interface U<T> { _: T; A: T; [skey: string]: T; }",
     errors: [
       "Expected interface keys to be in descending order. 'A' should be before '[index: skey]'.",
