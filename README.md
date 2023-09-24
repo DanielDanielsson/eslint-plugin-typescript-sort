@@ -1,10 +1,12 @@
 # eslint-plugin-typescript-sort
 
-Sort interfaces, types, string enums and arrow function object parameters.
+This plugin is intended to helps developers maintain a consistent coding style and improves code readability by sorting interfaces, types, string enums and arrow function object parameters.
 
 ```sh
 npm i --save-dev eslint-plugin-typescript-sort
 ```
+
+Highly recommended to use these rules when your IDE of choise it set to format on save according to eslint rules instead of prettier. That way you don't have to sort anything manually.
 
 ## Supported Rules
 
