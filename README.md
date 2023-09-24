@@ -17,11 +17,7 @@ Sort interfaces, types, string enums and arrow function object parameters.
 
 ## Installation
 
-You'll first need to install:
-
-- [eslint](https://www.npmjs.com/package/eslint)
-- [typescript](https://www.npmjs.com/package/typescript)
-- [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser)
+You'll first need to install [eslint](https://www.npmjs.com/package/eslint), [typescript](https://www.npmjs.com/package/typescript) and [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser)
 
 ```sh
 npm i --save-dev eslint typescript @typescript-eslint/parser
