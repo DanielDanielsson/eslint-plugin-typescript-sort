@@ -17,17 +17,17 @@ Sort interfaces, types, string enums and arrow function object parameters.
 
 ## Installation
 
-You'll first need to install
+You'll first need to install:
 
-- [eslint](http://eslint.org)
-- [typescript](http://www.typescriptlang.org/)
-- [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser)
+- [eslint](https://www.npmjs.com/package/eslint)
+- [typescript](https://www.npmjs.com/package/typescript)
+- [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser)
 
 ```sh
 npm i --save-dev eslint typescript @typescript-eslint/parser
 ```
 
-Next, install `eslint-plugin-typescript-sort`:
+Then, install `eslint-plugin-typescript-sort`:
 
 ```sh
 npm i --save-dev eslint-plugin-typescript-sort
@@ -47,7 +47,7 @@ Specify the parser for typescript files:
 
 ### Option 1
 
-Add `typescript-sort` to the plugins section. You can omit the `eslint-plugin-`:
+Add `typescript-sort` to the plugins section. You can omit the `eslint-plugin-` part:
 
 ```json
 {
