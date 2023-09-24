@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-typescript-sort",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "main": "./lib/index.esm.js",
   "exports": {
     ".": {
@@ -21,9 +21,9 @@
     "lint:fix": "eslint --ext .ts,.tsx . --fix",
     "test": "jest --coverage --logHeapUsage",
     "test:interface": "jest --coverage --logHeapUsage  -- interface.test.ts",
-    "test:type": "jest --coverage --logHeapUsage  -- sortType.test.ts",
-    "test:enum": "jest --coverage --logHeapUsage  -- sortEnum.test.ts",
-    "test:arrowfuncobjectprops": "jest --coverage --logHeapUsage  -- sortArrowFunctionObjectParams.test.ts",
+    "test:type": "jest --coverage --logHeapUsage  -- type.test.ts",
+    "test:enum": "jest --coverage --logHeapUsage  -- enum.test.ts",
+    "test:arrowfuncobjectprops": "jest --coverage --logHeapUsage  -- arrowFunctionObjectParams.test.ts",
     "compile": "rollup -c"
   },
   "dependencies": {
@@ -69,5 +69,6 @@
     "plugin",
     "typescript",
     "sort"
-  ]
+  ],
+  "lisence": "ISC"
 }
