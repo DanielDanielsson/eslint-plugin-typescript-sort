@@ -63,7 +63,7 @@ Then configure the rules you want to use under the rules section:
     "typescript-sort/interface": "error",
     "typescript-sort/type": "error",
     "typescript-sort/enum": "error"
-    "typescript-sort/arrow-func-object-params": "error"
+    "typescript-sort/arrowfunc-object-params": "error"
   }
 }
 ```
@@ -80,21 +80,9 @@ Enable all rules with recommended config:
 
 ## Rules options
 
-- **Ordering**:
+To see custom options for each rules, see the rule's [documentation page]("./docs/index.md).
 
-  - `"asc"` (default): Enforces properties to be in ascending order.
-  - `"desc"`: Enforces properties to be in descending order.
-
-- **Additional Configuration**:
-  - Object with 3 properties:
-    - `caseSensitive` (default: `true`): If `true`, enforces case-sensitive property order.
-    - `natural` (default: `false`): If `true`, enforces natural order, sorting strings containing a combination of letters and numbers as a human would, i.e., numerically.
-      - E.g. 1 2 10 3
-      - With `natural` set to `true`, the ordering would be: 1 2 3 10
-      - With `natural` set to `false`, the ordering would be: 1 2 10 3
-    - `requiredFirst` (default: `false`): If `true`, enforces optional properties to come after required ones.
-
-E.g.
+E.g. typescript-sort/interface has options for case sensitivity, natural order and required first.
 
 ```json
 {

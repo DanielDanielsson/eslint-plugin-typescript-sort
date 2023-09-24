@@ -30,33 +30,27 @@ enum MyEnum {
 }
 ```
 
-## 🔧 Options
+## Options
 
 ```json
 {
-  "typescript-sort/enum": [
+  "typescript-sort-keys/string-enum": [
     "error",
     "asc",
-    { "caseSensitive": true, "natural": false, "requiredFirst": false }
+    { "caseSensitive": true, "natural": true }
   ]
 }
 ```
 
-**Options for this rule:**
+The 1st option is `"asc"` or `"desc"`.
 
-- **Ordering**:
+- `"asc"` (default) - enforce enum members to be in ascending order.
+- `"desc"` - enforce enum members to be in descending order.
 
-  - `"asc"` (default): Enforces properties to be in ascending order.
-  - `"desc"`: Enforces properties to be in descending order.
+The 2nd option is an object which has 2 properties.
 
-- **Additional Configuration**:
-  - An object with 3 properties:
-    - `caseSensitive` (default: `true`): If `true`, enforces case-sensitive property order.
-    - `natural` (default: `false`): If `true`, enforces natural order, sorting strings containing a combination of letters and numbers as a human would, i.e., numerically.
-      - E.g. 1 2 10 3
-      - With `natural` set to `true`, the ordering would be: 1 2 3 10
-      - With `natural` set to `false`, the ordering would be: 1 2 10 3
-    - `requiredFirst` (default: `false`): If `true`, enforces optional properties to come after required ones.
+- `caseSensitive` - if `true`, enforce enum members to be in case-sensitive order. Default is `true`.
+- `natural` - if `true`, enforce enum members to be in natural order. Default is `false`. Natural Order compares strings containing combination of letters and numbers in the way a human being would sort. It basically sorts numerically, instead of sorting alphabetically. So the number 10 comes after the number 3 in Natural Sorting.
 
 ### desc
 
