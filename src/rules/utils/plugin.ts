@@ -156,9 +156,9 @@ export const createSortReporter = <MessageIds extends string>(
   const order = context.options[0] || SortingOrder.Ascending;
   const options = context.options[1];
   const isAscending = order === SortingOrder.Ascending;
-  const isInsensitive = !(options && options.caseSensitive);
+  const isInsensitive = (options && options.caseSensitive) === false;
   const isNatural = Boolean(options?.natural);
-  const isRequiredFirst = Boolean(options?.requiredFirst);
+  const isRequiredFirst = (options && options.requiredFirst) === true;
 
   const compare = compareFn(isAscending, isInsensitive, isNatural);
   const swapNodes = createNodeSwapper(context);
