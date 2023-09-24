@@ -80,7 +80,7 @@ Enable all rules with recommended config:
 
 ## Rules options
 
-To see custom options for each rules, see the rule's [documentation page]("./docs/index.md).
+To see custom options for each rules, see the rule's [`documentation page`]("./docs/index.md).
 
 E.g. typescript-sort/interface has options for case sensitivity, natural order and required first.
 
