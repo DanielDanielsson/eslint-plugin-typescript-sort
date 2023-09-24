@@ -1,9 +1,9 @@
 ## Rules documentation
 
-- [`typescript-sort/interface`](./docs/interface.md)
+- [`typescript-sort/interface`](./interface.md)
 
-- [`typescript-sort/type`](./docs/type.md)
+- [`typescript-sort/type`](./type.md)
 
-- [`typescript-sort/enum`](./docs/enum.md)
+- [`typescript-sort/enum`](./enum.md)
 
-- [`typescript-sort/arrowfunc-object-params`](./docs/arrowfunc-object-params.md)
+- [`typescript-sort/arrowfunc-object-params`](./arrowfunc-object-params.md)
