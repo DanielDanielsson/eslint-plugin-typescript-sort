@@ -1,12 +1,12 @@
 # eslint-plugin-typescript-sort
 
-This plugin is intended to helps developers maintain a consistent coding style and improves code readability by sorting interfaces, types, string enums and arrow function object parameters.
+Streamlines coding style consistency and code readability by sorting various code elements like interfaces, types, string enums, and object parameters within arrow functions.
 
 ```sh
 npm i --save-dev eslint-plugin-typescript-sort
 ```
 
-Highly recommended to use these rules when your IDE of choise it set to format on save according to eslint rules instead of prettier. That way you don't have to sort anything manually.
+`Tip`: Configure your IDE to auto-format code on save according to ESLint rules, reducing the need for manual sorting and enhancing your coding workflow.
 
 ## Supported Rules
 
