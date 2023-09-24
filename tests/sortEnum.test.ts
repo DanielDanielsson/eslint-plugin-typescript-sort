@@ -13,10 +13,7 @@ const ruleTester = new RuleTester({
 });
 
 const valid = [
-  /**
-   * ignores
-   */
-  { code: "enum U {a, b, c}", optionsSet: [[]] },
+  { code: noFormat`enum U {a, b, c}`, optionsSet: [[]] },
   { code: "enum U {a, b, c=a()}", optionsSet: [[]] },
   { code: "enum U {a, b, c=0}", optionsSet: [[]] },
   { code: "enum U {a, b, c=3}", optionsSet: [[]] },
