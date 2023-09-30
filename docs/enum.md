@@ -34,7 +34,7 @@ enum MyEnum {
 
 ```json
 {
-  "typescript-sort-keys/string-enum": [
+  "typescript-sort/enum": [
     "error",
     "asc",
     { "caseSensitive": true, "natural": true }
