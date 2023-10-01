@@ -52,7 +52,7 @@ The 2nd option is an object which has 2 properties.
 - `caseSensitive` - if `true`, enforce enum members to be in case-sensitive order. Default is `true`.
 - `natural` - if `true`, enforce enum members to be in natural order. Default is `false`. Natural Order compares strings containing combination of letters and numbers in the way a human being would sort. It basically sorts numerically, instead of sorting alphabetically. So the number 10 comes after the number 3 in Natural Sorting.
 
-### desc
+### Desc
 
 ❌ Examples of **incorrect** code for the `"desc"` option:
 
@@ -125,7 +125,7 @@ export const MyComponent = ({
 }) => null;
 ```
 
-### insensitive
+### Insensitive
 
 ❌ Examples of **incorrect** code for the `{ caseSensitive: false }` option:
 
@@ -166,7 +166,7 @@ export const MyComponent = ({
 }) => null;
 ```
 
-### natural
+### Natural
 
 ❌ Examples of **incorrect** code for the `{natural: true}` option:
 
@@ -192,7 +192,7 @@ export const MyComponent = ({
 }) => null;
 ```
 
-### required
+### Ratural
 
 ❌ Examples of **incorrect** code for the `{ requiredFirst: true }` option:
 

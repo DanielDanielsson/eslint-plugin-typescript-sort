@@ -58,7 +58,7 @@ interface MyInterface {
       - With `natural` set to `false`, the ordering would be: 1 2 10 3
     - `requiredFirst` (default: `false`): If `true`, enforces optional properties to come after required ones.
 
-### desc
+### Desc
 
 ❌ Examples of **incorrect** code for the `"desc"` option:
 
@@ -136,7 +136,7 @@ interface MyInterface {
 }
 ```
 
-### insensitive
+### Insensitive
 
 ❌ Examples of **incorrect** code for the `{ caseSensitive: false }` option:
 
@@ -177,7 +177,7 @@ interface MyInterface {
 }
 ```
 
-### natural
+### Natural
 
 ❌ Examples of **incorrect** code for the `{natural: true}` option:
 
@@ -203,7 +203,7 @@ interface MyInterface {
 }
 ```
 
-### required
+### Ratural
 
 ❌ Examples of **incorrect** code for the `{ requiredFirst: true }` option:
 
