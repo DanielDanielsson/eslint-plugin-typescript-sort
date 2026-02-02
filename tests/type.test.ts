@@ -1,15 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { RuleTester, noFormat } from "@typescript-eslint/rule-tester";
+import * as parser from "@typescript-eslint/parser";
 
 import { processInvalidTestCase, processValidTestCase } from "./helpers/util";
 import { sortType } from "../src/rules/sortType";
 import { SortingOrder } from "../src/rules/common/options";
 
-const parserResolver = require.resolve("@typescript-eslint/parser");
-
 const ruleTester = new RuleTester({
-  parser: parserResolver,
+  languageOptions: {
+    parser,
+    parserOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
+  },
 });
 
 const valid = [
