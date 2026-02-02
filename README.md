@@ -37,7 +37,49 @@ npm i --save-dev eslint-plugin-typescript-sort
 
 ## Usage
 
-Everything is configured in your `.eslintrc` configuration file
+### Flat Config (ESLint v9+)
+
+For ESLint v9 and above, use the flat config format in `eslint.config.js`:
+
+```javascript
+// eslint.config.js
+import tsSort from "eslint-plugin-typescript-sort";
+import tsParser from "@typescript-eslint/parser";
+
+export default [
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: { parser: tsParser },
+  },
+  tsSort.configs["flat/recommended"],
+];
+```
+
+Or configure rules manually:
+
+```javascript
+// eslint.config.js
+import tsSort from "eslint-plugin-typescript-sort";
+import tsParser from "@typescript-eslint/parser";
+
+export default [
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: { parser: tsParser },
+    plugins: { "typescript-sort": tsSort },
+    rules: {
+      "typescript-sort/interface": "error",
+      "typescript-sort/type": "error",
+      "typescript-sort/enum": "error",
+      "typescript-sort/arrowfunc-object-params": "error",
+    },
+  },
+];
+```
+
+### Legacy Config (ESLint v8)
+
+For ESLint v8 and below, use the `.eslintrc` configuration file.
 
 Specify the parser for typescript files:
 
@@ -47,7 +89,7 @@ Specify the parser for typescript files:
 }
 ```
 
-### Option 1
+#### Option 1
 
 Add `typescript-sort` to the plugins section. You can omit the `eslint-plugin-` part:
 
@@ -64,13 +106,13 @@ Then configure the rules you want to use under the rules section:
   "rules": {
     "typescript-sort/interface": "error",
     "typescript-sort/type": "error",
-    "typescript-sort/enum": "error"
+    "typescript-sort/enum": "error",
     "typescript-sort/arrowfunc-object-params": "error"
   }
 }
 ```
 
-### Option 2
+#### Option 2
 
 Enable all rules with recommended config:
 
