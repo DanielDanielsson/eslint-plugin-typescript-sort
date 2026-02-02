@@ -22,7 +22,7 @@ type TSType =
   | TSESTree.RestElement;
 
 const createNodeSwapper = (context: UtilRuleContext<string, RuleOptions>) => {
-  const sourceCode = context.getSourceCode() as SourceCode & {
+  const sourceCode = (context.sourceCode ?? context.getSourceCode()) as SourceCode & {
     lineStartIndices: number[];
   };
 

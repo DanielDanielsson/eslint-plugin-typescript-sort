@@ -11,7 +11,7 @@ import {
 } from "./common/options";
 
 const getObjectBody = (node: TSESTree.TSEnumDeclaration) =>
-  AST_NODE_TYPES.TSEnumDeclaration && node.members;
+  AST_NODE_TYPES.TSEnumDeclaration && (node.body?.members ?? node.members);
 /**
  * The name of this rule.
  */
