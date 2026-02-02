@@ -5,13 +5,14 @@ import {
   RuleListener,
   RuleMetaData as UtilRuleMetaData,
   RuleMetaDataDocs as UtilRuleMetaDataDocs,
-  RuleModule,
 } from '@typescript-eslint/utils/ts-eslint';
 
 export type BaseOptions = readonly unknown[];
 
-// "url" will be set automatically.
-export type RuleMetaDataDocs = Omit<UtilRuleMetaDataDocs, 'url'>;
+// "url" will be set automatically. Add custom "recommended" field.
+export type RuleMetaDataDocs = Omit<UtilRuleMetaDataDocs, 'url'> & {
+  readonly recommended?: string;
+};
 
 // "docs.url" will be set automatically.
 export type RuleMetaData<MessageIds extends string> = {
@@ -44,8 +45,10 @@ export const createRule = <
   readonly defaultOptions: Options;
   readonly meta: RuleMetaData<MessageIds>;
   readonly name: string;
-}): RuleModule<MessageIds, Options, RuleListener> =>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+}): any =>
   ESLintUtils.RuleCreator(
     (name) =>
-      `https://github.com/infctr/eslint-plugin-typescript-sort-keys/blob/master/docs/rules/${name}.md`,
-  )(data);
+      `https://github.com/DanielDanielsson/eslint-plugin-typescript-sort/blob/master/docs/rules/${name}.md`,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  )(data as any);
